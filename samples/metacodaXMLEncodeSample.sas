@@ -1,7 +1,7 @@
 ﻿/*
 --------------------------------------------------------------------------------
 
-Sample: metacodaXMLEncode
+Sample: metacodaXMLEncodeSample.sas
 
 Purpose:
    Demonstrates the use of the metacodaXMLEncode macro.

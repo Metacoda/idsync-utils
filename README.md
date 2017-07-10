@@ -1,4 +1,4 @@
-# Metacoda Identity Sync Utils (idsync-utils)
+# Metacoda Identity Sync Utilities (idsync-utils)
 
 This repository contains extra samples and SAS macros that can be used with the
 [Metacoda® Identity Sync Plug-in](https://www.metacoda.com/en/products/security-plug-ins/identity-sync/).
@@ -76,3 +76,20 @@ Example:
 
     encoded = cats(' DisplayName="', %metacodaXMLEncode(displayName), '"/>');
 
+For another example see [samples/metacodaXMLEncodeSample.sas](metacodaXMLEncodeSample.sas).
+
+### metacodaExtIdExtract
+
+This macro is used to extract basic attribute values for ExternalIdentity objects from SAS metadata.
+ExternalIdentity objects are created during identity synchronization with external identity sources such as
+Microsoft Active Directory. They contain the 3rd party keys for those external users and groups that allow
+us to re-locate those external identities when a subsequent sync is done, ideally even when the external
+users and groups are renamed or moved into another part of the directory.
+
+    * Extract external identity metadata for all AD-synced users; 
+    %metacodaExtIdExtract(table=work.adUserExtIds,context=Active Directory Import,associatedModelType=Person);
+
+    * Extract external identity metadata for all AD-synced groups; 
+    %metacodaExtIdExtract(table=work.adGroupExtIds,context=Active Directory Import,associatedModelType=IdentityGroup);
+
+For more examples see [samples/metacodaExtIdExtractSample.sas](metacodaExtIdExtractSample.sas).

@@ -1,14 +1,17 @@
-# IntelliJ project files
+# Ignore any IntelliJ project files.
 /.idea
 /*.iml
+
+# Ignore any personal SAS autoexec for testing samples.
+samples/autoexec.sas
 
 # SAS logs and output
 **/*.log
 **/*.lst
 
-# Scratch notes and dir
+# Ignore any scratch notes and dir.
 /scratch.txt
 /scratch
 
-# Temporary files
+# Ignore various temporary files.
 **/*.swp
