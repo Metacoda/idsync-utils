@@ -1,0 +1,14 @@
+# IntelliJ project files
+/.idea
+/*.iml
+
+# SAS logs and output
+**/*.log
+**/*.lst
+
+# Scratch notes and dir
+/scratch.txt
+/scratch
+
+# Temporary files
+**/*.swp
