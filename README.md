@@ -92,4 +92,4 @@ users and groups are renamed or moved into another part of the directory.
     * Extract external identity metadata for all AD-synced groups; 
     %metacodaExtIdExtract(table=work.adGroupExtIds,context=Active Directory Import,associatedModelType=IdentityGroup);
 
-For more examples see [metacodaExtIdExtractSample.sas](sample/metacodaExtIdExtractSample.sas).
+For more examples see [metacodaExtIdExtractSample.sas](samples/metacodaExtIdExtractSample.sas).
