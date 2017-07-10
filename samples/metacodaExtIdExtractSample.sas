@@ -43,6 +43,8 @@ limitations under the License.
   metapass="{sas002}pwencodedpassword"
   ;
 
+options ls=max ps=max;
+
 * -----------------------------------------------------------------------------;
 
 * Sample 1: extract basic attributes for ALL ExternalIdentity objects;
