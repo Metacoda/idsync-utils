@@ -1,0 +1,5 @@
+Metacoda Identity Sync Utilities
+Copyright 2017 Metacoda Pty Ltd
+
+This product includes software developed at
+Metacoda Pty Ltd (https://www.metacoda.com/).
