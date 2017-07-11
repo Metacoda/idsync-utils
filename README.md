@@ -93,3 +93,38 @@ users and groups are renamed or moved into another part of the directory.
     %metacodaExtIdExtract(table=work.adGroupExtIds,context=Active Directory Import,associatedModelType=IdentityGroup);
 
 For more examples see [metacodaExtIdExtractSample.sas](samples/metacodaExtIdExtractSample.sas).
+
+### metacodaExtIdUpdate
+
+This macro is used to update basic attribute values for existing ExternalIdentity objects from SAS metadata.
+
+As mentioned above, in the metacodaExtIdExtract macro section, ExternalIdentity objects are used to
+maintain unique identifiers in metadata that link SAS identities to external identities (such as 
+Microsoft Active Directory users & groups).
+
+The metacodaExtIdUpdate macro can be used as part of a process to perform a bulk update of keyId
+values if you want to migrate the type of unique identifier you are using for identity sync.
+For example you might want to switch from using sAMAccountName to objectGUID for users, 
+and switch from using distinguishedName to objectGUID. By switching to objectGUID we can take
+advantage of a better choice for an unchanging unique id for objects in Active Directory.
+
+The macro takes a table of ExternalIdentity metadata object ids and new identifier (keyId) values
+and applies those new values to SAS metadata.
+
+    * Update ExternalIdentity Identifier (keyId) values for AD-synced users; 
+    %metacodaExtIdUpdate(
+        table=work.userExtIdUpdate,
+        extIdObjIdColName=extIdObjId,
+        extIdNewIdentifierColName=extIdNewIdentifier
+        );
+
+    * Update ExternalIdentity Identifier (keyId) values for AD-synced groups; 
+    %metacodaExtIdUpdate(
+        table=groupExtIdUpdate,
+        extIdObjIdColName=extIdObjId,
+        extIdNewIdentifierColName=extIdNewIdentifier
+        );
+
+See the sample [metacodaExtIdUpdateSample.sas](samples/metacodaExtIdUpdateSample.sas) for a more
+in-depth example of how a keyId migration can be done with the help of the Metacoda Identity Sync
+Plug-in.
