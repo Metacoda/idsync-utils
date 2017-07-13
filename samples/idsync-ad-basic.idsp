@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*******************************************************************************
+
+Sample: idsync-ad-basic.idsp
+
+Purpose:
+
+An example/template for a basic Metacoda Identity Sync Profile (IDSP) that
+synchronizes between a single Active Directory server (ad.example.com) and
+the current SAS Metadata Server connection (either within SAS Management
+Console, when using the Metacoda Identity Sync Plug-in, or a
+MetadataConnection, when used with the Metacoda Plug-ins Batch Interface).
+
+No encryption is used for the connection to AD (LDAP protocol on port 389)
+and simple plain-text authentication is done (not recommended).
+
+Two specific AD groups have been targeted for synchronization, and all
+of their members will be targeted too. This includes all nested groups,
+to any level of nesting, and all user members of all of these groups.
+
+Any previously synchronized SAS users and groups that are no longer found
+within the set of targeted AD users and groups will be tag-deleted. That
+is they will be tagged for manual deletion within SAS metadata and
+effectively disabled (all of their group/role memberships and logins
+will be removed). This a safer reversible process when compared to true
+deletion within SAS metadata.
+
+No specific exclusions or exceptions have been configured.
+ 
+Audit reports and metadata backups have not been enabled.
+
+Other than as specified above, all other aspects of this Identity Sync
+Profile are as configured by default when using the Metacoda Identity
+Sync Profile Wizard.
+
+This basic template will be used as the basis for comparison with the
+other examples provided to illustrate how specific features are configured.
+A diff comparison between this file and the other examples is a good way
+to see specifically how those features can be enabled via IDSP settings.
+Whilst many of these IDSP settings can be configured interactively, using
+Metacoda Identity Sync Profile Wizard, some of the more advanced and
+lesser used features can only be configured by direct editing of the
+IDSP XML. These examples are provided to show how those features can
+be added to an IDSP.
+
+Authors:
+   Paul Homes <paul.homes@metacoda.com>
+
+*******************************************************************************
+
+Copyright 2017 Metacoda Pty Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+*******************************************************************************
+-->
+<IdentitySyncProfile xmlns="http://metacoda.com/xsd/plugins-idsync-profile-6"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://metacoda.com/xsd/plugins-idsync-profile-6 http://metacoda.com/xsd/plugins-idsync-profile-6.xsd">
+  <IdentitySource type="activeDirectoryServer"/>
+  <LDAPConfig
+    protocol="ldap"
+    host="ad.example.com"
+    port="389"
+    useStartTLS="false"
+    authMethod="simple"
+    bindUser="bind-userid"
+    bindPassword="{sas002}pwencoded-bind-password"
+    followReferrals="true"
+    containerSearchDN="DC=corp,DC=example,DC=com"
+    containerFilter="|(objectClass=organizationalUnit)(objectClass=container)"
+    groupSearchDN="CN=Users,DC=corp,DC=example,DC=com"
+    groupFilter="objectCategory=Group"
+    groupKeyIdAttr="objectGUID"
+    groupNameAttr="sAMAccountName"
+    groupDisplayNameAttr="displayNameOrName"
+    groupDescriptionAttr="description"
+    groupMemberAttr="member"
+    userSearchDN="CN=Users,DC=corp,DC=example,DC=com"
+    userFilter="objectCategory=Person"
+    userKeyIdAttr="objectGUID"
+    userNameAttr="sAMAccountName"
+    userDisplayNameAttr="displayNameOrName"
+    userDescriptionAttr="description"
+    userTitleAttr="title"
+    locationAddressAttr="streetAddress"
+    locationCityAttr="l"
+    locationPostCodeAttr="postalCode"
+    locationAreaAttr="st"
+    locationCountryAttr="co"
+    phoneWorkAttr="telephoneNumber"
+    phoneFaxAttr="facsimileTelephoneNumber"
+    phoneMobileAttr="mobile"
+    phoneHomeAttr="homePhone"
+    phonePagerAttr="pager"
+    phoneIPAttr="ipPhone"
+    emailAttr="mail"
+    loginAttr="sAMAccountName"
+    login2Attr="sAMAccountNameWithDomain"
+    searchPaging="true"
+    searchPageSize="500"
+    searchLimit="500"
+    />
+  <GroupSync
+    basis="selected"
+    namePrefixEnabled="false"
+    namePrefix="ad_"
+    nameSuffixEnabled="false"
+    nameSuffix="_ad"
+    displayNamePrefixEnabled="false"
+    displayNamePrefix="[AD] "
+    displayNameSuffixEnabled="false"
+    displayNameSuffix=" [AD]"
+    >
+    <IncludedGroups>
+      <Group name="Group1" dn="CN=Group1,CN=Users,DC=corp,DC=example,DC=com" guid="bda0a327-2017-4eae-86d6-777376d9fd4c"/>
+      <Group name="Group2" dn="CN=Group2,CN=Users,DC=corp,DC=example,DC=com" guid="214c4412-3be0-4563-a3bb-dd72f010b4b8"/>
+    </IncludedGroups>
+  </GroupSync>
+  <UserSync
+    basis="groupMembers"
+    namePrefixEnabled="false"
+    namePrefix="ad_"
+    nameSuffixEnabled="false"
+    nameSuffix="_ad"
+    displayNamePrefixEnabled="false"
+    displayNamePrefix="[AD] "
+    displayNameSuffixEnabled="false"
+    displayNameSuffix=" [AD]"
+    loginAuthDomain="DefaultAuth"
+    loginAuthDomainKeyId="a01"
+    loginPrefixEnabled="false"
+    loginPrefix="CORP\"
+    loginSuffixEnabled="false"
+    loginSuffix="@CORP.EXAMPLE.COM"
+    login2Enabled="false"
+    login2AuthDomain="Web"
+    login2AuthDomainKeyId="a02"
+    login2PrefixEnabled="false"
+    login2Prefix=""
+    login2SuffixEnabled="false"
+    login2Suffix=""
+    emailEnabled="true"
+    emailType="Office"
+    phoneEnabled="true"
+    phoneWorkType="Office"
+    phoneFaxType="Office Fax"
+    phoneMobileType="Mobile"
+    phoneHomeType="Home"
+    phonePagerType="Pager"
+    phoneIPType="IP Phone"
+    locationEnabled="true"
+    locationType="Office"
+    >
+  </UserSync>
+  <Options
+    extIdTag="Active Directory Import"
+    tagDeletedIdentities="true"
+    deletedIdentityTag="DELETE"
+    metadataBackupEnabled="false"
+    auditReportEnabled="false"
+    auditReportTimestamped="true"
+    applyChanges="true"
+    debug="false"
+    />
+</IdentitySyncProfile>

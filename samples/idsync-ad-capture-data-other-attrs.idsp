@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*******************************************************************************
+
+Sample: idsync-ad-capture-data-other-attrs.idsp
+
+Purpose:
+
+This Metacoda Identity Sync Profile (IDSP) differs from the basic AD example
+(idsync-ad-basic.idsp) in that it has also been configured to:
+
+1) Place the intermediate, otherwise temporary, working tables into a specific
+   permanent location in the SAS Application Server's file system so that those
+   tables can also be used for any custom post-processing outside of the
+   Metacoda Identity Sync Plug-in.
+   
+2) Capture additional AD object attributes (sAMAccountName, distinguishedName,
+   and objectGUID) that may be required in that custom post processing.
+
+One example of where this is used is in the metacodaExtIdUpdateSample.sas
+program, also in this repository, where we pull additional attributes out of AD
+so that we can perform a one-off remapping, or recoding, of user and group keyId
+unique identifiers for identity synchronization.
+
+Another example of where this can be helpful is when you need to do some
+additional custom audit reporting around user and group turnover. Perhaps you
+need to send an automated email for new and deleted SAS users for an
+organization?
+
+The first part of the customization is achieved by adding the serverBaseDir
+attribute into the IDSP Options tag like so:
+       
+  <Options
+    ...
+    serverBaseDir="Data/idsync"
+    ...
+    />
+
+The serverBaseDir value specifies a directory on the SAS application server
+where IDS_SRC, IDS_TRG, and IDS_CHG libraries and tables will be created:
+
+* IDS_SRC is a library containing SAS canonical tables for source identities:
+  users and groups that have been extracted from Active Directory.
+
+* IDS_TRG is a library containing SAS canonical tables for target identities:
+  users and groups that have been extracted from SAS metadata. This library will
+  have been populated using the standard SAS %MDUEXTR macro.
+
+* IDS_CHG is a library containing SAS tables for the changes that need to be
+  made, or have been made, to the target identities (SAS metadata) to get them
+  in sync with the source (Active Directory). This library will have been
+  populated using the standard SAS %MDUCMP macro with potential Metacoda
+  customizations (based on the IDSP).
+ 
+These libraries are normally placed under the SAS work location and
+automatically deleted after use. That behaviour is changed by providing an
+explicit serverBaseDir. The libraries and tables are then placed under the
+specified location and retained upon completion of the identity sync process
+so they can be used for any custom post-processing.
+
+A relative serverBaseDir path, as shown above, is relative to the SAS
+application server directory e.g. /opt/sas/config/Lev1/SASApp
+You can also use an absolute path if required.
+
+The second part of the customization, collecting additional AD attributes,
+is achieved by naming those attributes, in a comma separated list, in the
+LDAPConfig via the groupOtherAttrs and userOtherAttrs attributes. e.g.
+
+  <LDAPConfig
+    ...
+    groupOtherAttrs="sAMAccountName, distinguishedName, objectGUID"
+    userOtherAttrs="sAMAccountName, distinguishedName, objectGUID"
+    />
+
+When groupOtherAttrs and/or userOtherAttrs are found in an IDSP, the Metacoda
+Identity Sync source extract process will also request those attributes from AD
+for groups and users respectively. Those attribute values are added as
+additional columns, with an X_ prefix to avoid any clashes with existing SAS
+columns, to copies of the IDGRPS and PERSON canonical tables in the IDS_SRC
+library. These copies are named IDGRPS_X and PERSON_X.  
+
+In the example above this would result in new tables in the Data/idsync/ids_src
+folder (IDS_SRC library) with the following additional tables and columns:
+
+Table IDS_SRC.IDGRPS_X as a copy of IDS_SRC.IDGRPS with the additional columns:
+    X_SAMACCOUNTNAME: containing the AD groups sAMAccountName value
+    X_DISTINGUISHEDNAME: containing the AD groups distinguishedName value
+    X_OBJECTGUID: containing the AD groups objectGUID value
+
+Table IDS_SRC.PERSON_X as a copy of IDS_SRC.PERSON with the additional columns:
+    X_SAMACCOUNTNAME: containing the AD users sAMAccountName value
+    X_DISTINGUISHEDNAME: containing the AD users distinguishedName value
+    X_OBJECTGUID: containing the AD users sAMAccountName value
+
+Authors:
+   Paul Homes <paul.homes@metacoda.com>
+
+*******************************************************************************
+
+Copyright 2017 Metacoda Pty Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+*******************************************************************************
+-->
+<IdentitySyncProfile xmlns="http://metacoda.com/xsd/plugins-idsync-profile-6"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://metacoda.com/xsd/plugins-idsync-profile-6 http://metacoda.com/xsd/plugins-idsync-profile-6.xsd">
+  <IdentitySource type="activeDirectoryServer"/>
+  <LDAPConfig
+    protocol="ldap"
+    host="ad.example.com"
+    port="389"
+    useStartTLS="false"
+    authMethod="simple"
+    bindUser="bind-userid"
+    bindPassword="{sas002}pwencoded-bind-password"
+    followReferrals="true"
+    containerSearchDN="DC=corp,DC=example,DC=com"
+    containerFilter="|(objectClass=organizationalUnit)(objectClass=container)"
+    groupSearchDN="CN=Users,DC=corp,DC=example,DC=com"
+    groupFilter="objectCategory=Group"
+    groupKeyIdAttr="objectGUID"
+    groupNameAttr="sAMAccountName"
+    groupDisplayNameAttr="displayNameOrName"
+    groupDescriptionAttr="description"
+    groupMemberAttr="member"
+    userSearchDN="CN=Users,DC=corp,DC=example,DC=com"
+    userFilter="objectCategory=Person"
+    userKeyIdAttr="objectGUID"
+    userNameAttr="sAMAccountName"
+    userDisplayNameAttr="displayNameOrName"
+    userDescriptionAttr="description"
+    userTitleAttr="title"
+    locationAddressAttr="streetAddress"
+    locationCityAttr="l"
+    locationPostCodeAttr="postalCode"
+    locationAreaAttr="st"
+    locationCountryAttr="co"
+    phoneWorkAttr="telephoneNumber"
+    phoneFaxAttr="facsimileTelephoneNumber"
+    phoneMobileAttr="mobile"
+    phoneHomeAttr="homePhone"
+    phonePagerAttr="pager"
+    phoneIPAttr="ipPhone"
+    emailAttr="mail"
+    loginAttr="sAMAccountName"
+    login2Attr="sAMAccountNameWithDomain"
+    searchPaging="true"
+    searchPageSize="500"
+    searchLimit="500"
+    groupOtherAttrs="sAMAccountName, distinguishedName, objectGUID"
+    userOtherAttrs="sAMAccountName, distinguishedName, objectGUID"
+    />
+  <GroupSync
+    basis="selected"
+    namePrefixEnabled="false"
+    namePrefix="ad_"
+    nameSuffixEnabled="false"
+    nameSuffix="_ad"
+    displayNamePrefixEnabled="false"
+    displayNamePrefix="[AD] "
+    displayNameSuffixEnabled="false"
+    displayNameSuffix=" [AD]"
+    >
+    <IncludedGroups>
+      <Group name="Group1" dn="CN=Group1,CN=Users,DC=corp,DC=example,DC=com" guid="bda0a327-2017-4eae-86d6-777376d9fd4c"/>
+      <Group name="Group2" dn="CN=Group2,CN=Users,DC=corp,DC=example,DC=com" guid="214c4412-3be0-4563-a3bb-dd72f010b4b8"/>
+    </IncludedGroups>
+  </GroupSync>
+  <UserSync
+    basis="groupMembers"
+    namePrefixEnabled="false"
+    namePrefix="ad_"
+    nameSuffixEnabled="false"
+    nameSuffix="_ad"
+    displayNamePrefixEnabled="false"
+    displayNamePrefix="[AD] "
+    displayNameSuffixEnabled="false"
+    displayNameSuffix=" [AD]"
+    loginAuthDomain="DefaultAuth"
+    loginAuthDomainKeyId="a01"
+    loginPrefixEnabled="false"
+    loginPrefix="CORP\"
+    loginSuffixEnabled="false"
+    loginSuffix="@CORP.EXAMPLE.COM"
+    login2Enabled="false"
+    login2AuthDomain="Web"
+    login2AuthDomainKeyId="a02"
+    login2PrefixEnabled="false"
+    login2Prefix=""
+    login2SuffixEnabled="false"
+    login2Suffix=""
+    emailEnabled="true"
+    emailType="Office"
+    phoneEnabled="true"
+    phoneWorkType="Office"
+    phoneFaxType="Office Fax"
+    phoneMobileType="Mobile"
+    phoneHomeType="Home"
+    phonePagerType="Pager"
+    phoneIPType="IP Phone"
+    locationEnabled="true"
+    locationType="Office"
+    >
+  </UserSync>
+  <Options
+    extIdTag="Active Directory Import"
+    tagDeletedIdentities="true"
+    deletedIdentityTag="DELETE"
+    metadataBackupEnabled="false"
+    auditReportEnabled="false"
+    auditReportTimestamped="true"
+    applyChanges="true"
+    serverBaseDir="Data/idsync"
+    debug="false"
+    />
+</IdentitySyncProfile>

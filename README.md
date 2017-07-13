@@ -87,10 +87,18 @@ us to re-locate those external identities when a subsequent sync is done, ideall
 users and groups are renamed or moved into another part of the directory.
 
     * Extract external identity metadata for all AD-synced users; 
-    %metacodaExtIdExtract(table=work.adUserExtIds,context=Active Directory Import,associatedModelType=Person);
+    %metacodaExtIdExtract(
+        table=work.adUserExtIds,
+        context=Active Directory Import,
+        associatedModelType=Person
+        );
 
     * Extract external identity metadata for all AD-synced groups; 
-    %metacodaExtIdExtract(table=work.adGroupExtIds,context=Active Directory Import,associatedModelType=IdentityGroup);
+    %metacodaExtIdExtract(
+        table=work.adGroupExtIds,
+        context=Active Directory Import,
+        associatedModelType=IdentityGroup
+        );
 
 For more examples see [metacodaExtIdExtractSample.sas](samples/metacodaExtIdExtractSample.sas).
 
@@ -128,3 +136,30 @@ and applies those new values to SAS metadata.
 See the sample [metacodaExtIdUpdateSample.sas](samples/metacodaExtIdUpdateSample.sas) for a more
 in-depth example of how a keyId migration can be done with the help of the Metacoda Identity Sync
 Plug-in.
+
+## Identity Sync Profiles
+
+Metacoda Identity Sync Profiles (IDSPs) are XML files, with a file extension of .idsp, that contain
+configuration information required for the Metacoda Identity Sync Plug-in to synchronize target
+SAS metadata identities (users and groups) with source identities, such as users and groups from
+Microsoft Active Directory.
+The Metacoda Identity Sync Plug-in can be used interactively, within the SAS Management Console, to
+manually preview any changes before applying them to SAS metadata. Alternatively, Identity Sync
+Profiles can also be processed by the Metacoda Plug-ins Batch Interface so that automatic identity
+synchronizations can be regularly scheduled.  
+
+Identity Sync Profiles are usually created by using the Metacoda Identity Sync Profile Wizard
+within SAS Management Console. This wizard only provides access to the most commonly used
+configurable elements. To access to some of the more advanced features you will need to edit
+the IDSP XML directly. The examples in this repository are provided to show how those features
+can be added to an IDSP.
+
+* [idsync-ad-basic.idsp](samples/idsync-ad-basic.idsp): A basic example for synchronizing identities
+  in a SAS metadata server with Microsoft Active Directory. All of the other examples below can be
+  compared with this basic example to review the XML changes required. 
+* [idsync-ad-capture-data-other-attrs.idsp](samples/idsync-ad-capture-data-other-attrs.idsp):
+   Demonstrates how to capture intermediate, otherwise temporary, working tables used in the
+   identity sync process so those tables can also be used for custom post-processing outside
+   of the Metacoda Identity Sync Plug-in. Also shows how to capture any additional AD object
+   attributes required for that custom post-processing e.g. sAMAccountName, distinguishedName and 
+   objectGUID.
