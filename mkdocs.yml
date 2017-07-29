@@ -1,0 +1,26 @@
+site_name: Metacoda Identity Sync Utilities
+site_url: https://metacoda.github.io/idsync-utils/
+site_description: Utilities, samples, and documentation for the Metacoda Identity Sync Plug-in. 
+site_author: Metacoda Pty Ltd
+copyright: Copyright &copy; 2017 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.
+repo_url: https://github.com/metacoda/idsync-utils/
+theme: readthedocs
+pages:
+  - Intro: index.md
+  - Topics:
+    - Identity Sync Profiles & Process: 'topics/idsp.md'
+    - Active Directory Domains: 'topics/ad-domains.md'
+    - Using Canonical Tables: 'topics/canonical-tables.md'
+  - Reference:
+    - SAS Macros:
+      - Overview: 'sasautos/index.md'
+      - '%metacodaExtIdExtract': 'sasautos/metacodaExtIdExtract.md'
+      - '%metacodaExtIdUpdate': 'sasautos/metacodaExtIdUpdate.md'
+      - '%metacodaXMLEncode': 'sasautos/metacodaXMLEncode.md'
+  - Samples:
+    - Sample Identity Sync Profiles: 'samples/idsp-samples.md'
+    - Sample SAS Programs: 'samples/sas-samples.md'
+  - Resources: resources.md
+  - About:
+    - License: 'about/license.md'
+    - Trademarks: 'about/trademarks.md'

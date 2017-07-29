@@ -20,14 +20,14 @@ This Metacoda Identity Sync Profile (IDSP) differs from the basic AD example
 One example of where this is used is in the metacodaExtIdUpdateSample.sas
 program, also in this repository, where we pull additional attributes out of AD
 so that we can perform a one-off remapping, or recoding, of user and group keyId
-unique identifiers for identity synchronization.
+unique identifiers for identity synchronisation.
 
 Another example of where this can be helpful is when you need to do some
 additional custom audit reporting around user and group turnover. Perhaps you
 need to send an automated email for new and deleted SAS users for an
-organization?
+organisation?
 
-The first part of the customization is achieved by adding the serverBaseDir
+The first part of the customisation is achieved by adding the serverBaseDir
 attribute into the IDSP Options tag like so:
        
   <Options
@@ -50,7 +50,7 @@ where IDS_SRC, IDS_TRG, and IDS_CHG libraries and tables will be created:
   made, or have been made, to the target identities (SAS metadata) to get them
   in sync with the source (Active Directory). This library will have been
   populated using the standard SAS %MDUCMP macro with potential Metacoda
-  customizations (based on the IDSP).
+  customisations (based on the IDSP).
  
 These libraries are normally placed under the SAS work location and
 automatically deleted after use. That behaviour is changed by providing an
@@ -62,7 +62,7 @@ A relative serverBaseDir path, as shown above, is relative to the SAS
 application server directory e.g. /opt/sas/config/Lev1/SASApp
 You can also use an absolute path if required.
 
-The second part of the customization, collecting additional AD attributes,
+The second part of the customisation, collecting additional AD attributes,
 is achieved by naming those attributes, in a comma separated list, in the
 LDAPConfig via the groupOtherAttrs and userOtherAttrs attributes. e.g.
 

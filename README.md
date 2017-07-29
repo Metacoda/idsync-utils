@@ -2,164 +2,20 @@
 
 This repository contains extra samples and SAS macros that can be used with the
 [Metacoda® Identity Sync Plug-in](https://www.metacoda.com/en/products/security-plug-ins/identity-sync/).
-Metacoda customers and partners, and potentially other SAS customers, may find these utilities useful when setting
-up an identity synchronization process between a [SAS®](http://www.sas.com/) Metadata Server and an external identity
-provider, such as Microsoft Active Directory.
+Metacoda customers and partners, and potentially other SAS customers, may find these utilities
+useful when setting up an identity synchronisation process between a [SAS®](http://www.sas.com/)
+Metadata Server and an external identity provider, such as Microsoft Active Directory.
+
+## Documentation
+
+The documentation is generated using [MkDocs](http://www.mkdocs.org/), from the sources in this
+repositories docs/ folder, and hosted using GitHub pages at
+<https://metacoda.github.io/idsync-utils/>.
 
 ## License
 
-The utilities contained in this repository are licensed under the terms of the
-[Apache License 2.0](https://opensource.org/licenses/Apache-2.0). See [LICENSE.txt](LICENSE.txt) for more information.
-
-The Metacoda Identity Sync Plug-in which these utilities are intended to support is a commercial product from
-Metacoda Pty Ltd, and must be separately licensed from Metacoda if you want to use these utilities with it.
-
-If you do not license the Metacoda Identity Sync Plug-in from Metacoda then some of these utilities may still be of
-use to you with alternative SAS identity synchronization processes. The license referenced above permits such use.
+See [License](docs/about/license.md)
 
 ## Trademarks
 
-Metacoda and all other Metacoda product or service names are registered trademarks or trademarks of
-[Metacoda Group Pty Ltd] (https://www.metacoda.com/) in the USA and other countries.
-
-SAS and all other SAS Institute Inc. product or service names are registered trademarks or trademarks of
-[SAS Institute Inc.](http://www.sas.com/) in the USA and other countries. ® indicates USA registration.
-
-Other product and company names mentioned herein may be registered trademarks or trademarks of their respective owners.
-
-## Repository Contents
-
-| Folder     | Notes         |
-| ---------- | ------------- |
-| samples/   | Contains example Metacoda Identity Sync Profiles (.idsp files) and SAS programs that relate to SAS metadata identity synchronization. |
-| sasautos/  | Contains utility SAS macros that may be of use in an identity sync process. This directory can be added to the SAS autocall macro search path if required. |
-
-
-## Installation
-
-Choose a suitable location in the file system on your SAS server (or workstation) and clone the repository from github
-e.g.
-
-    git clone git@github.com:Metacoda/idsync-utils.git
-   
-or:
-   
-    git clone https://github.com/Metacoda/idsync-utils.git
-
-Alternatively you can download a ZIP file from https://github.com/Metacoda/idsync-utils/archive/master.zip and unpack
-it into the desired location.
-
-If you want to make the SAS macros available using the SAS autocall facility you can add the path to the
-idsync-utils/sasautos directory into the SASAUTOS option by adding the following line into the appropriate
-*sasv9_usermods.cfg* file for your SAS platform installation
-e.g. /opt/sas94m4/config/Lev1/SASApp/sasv9_usermods.cfg
- 
-    -insert sasautos "/path/to/idsync-utils/sasautos"
-
-## SAS Macros
-
-All SAS macros in this repository are named with a metacoda prefix to avoid name clashes with any of your existing SAS
-macros.
-
-Additionally, although the example usages show mixed case macro names, the macro source file names are always
-maintained in lower case to support their use as part of the SAS autocall macro facility, which transforms macro names
-to lower case file names before searching for them in the SASAUTOS file system search path.
-For more info see *Guidelines for Naming Macro Files* in the
-[Using Autocall Libraries in UNIX Environments](https://support.sas.com/documentation/cdl/en/hostunx/69602/HTML/default/viewer.htm#p08uk7awhtj5w6n1qaj3n3h0oa4s.htm)
-section of the *SAS 9.4 Companion for UNIX Environments*.
-
-### metacodaXMLEncode
-
-This macro is used for consistent encoding of text so that it can be used in an XML file or stream, such as those used with SAS PROC METACODA.
-
-Example:
-
-    encoded = cats(' DisplayName="', %metacodaXMLEncode(displayName), '"/>');
-
-For another example see [metacodaXMLEncodeSample.sas](samples/metacodaXMLEncodeSample.sas).
-
-### metacodaExtIdExtract
-
-This macro is used to extract basic attribute values for ExternalIdentity objects from SAS metadata.
-ExternalIdentity objects are created during identity synchronization with external identity sources such as
-Microsoft Active Directory. They contain the 3rd party keys for those external users and groups that allow
-us to re-locate those external identities when a subsequent sync is done, ideally even when the external
-users and groups are renamed or moved into another part of the directory.
-
-    * Extract external identity metadata for all AD-synced users; 
-    %metacodaExtIdExtract(
-        table=work.adUserExtIds,
-        context=Active Directory Import,
-        associatedModelType=Person
-        );
-
-    * Extract external identity metadata for all AD-synced groups; 
-    %metacodaExtIdExtract(
-        table=work.adGroupExtIds,
-        context=Active Directory Import,
-        associatedModelType=IdentityGroup
-        );
-
-For more examples see [metacodaExtIdExtractSample.sas](samples/metacodaExtIdExtractSample.sas).
-
-### metacodaExtIdUpdate
-
-This macro is used to update basic attribute values for existing ExternalIdentity objects from SAS metadata.
-
-As mentioned above, in the metacodaExtIdExtract macro section, ExternalIdentity objects are used to
-maintain unique identifiers in metadata that link SAS identities to external identities (such as 
-Microsoft Active Directory users & groups).
-
-The metacodaExtIdUpdate macro can be used as part of a process to perform a bulk update of keyId
-values if you want to migrate the type of unique identifier you are using for identity sync.
-For example you might want to switch from using sAMAccountName to objectGUID for users, 
-and switch from using distinguishedName to objectGUID. By switching to objectGUID we can take
-advantage of a better choice for an unchanging unique id for objects in Active Directory.
-
-The macro takes a table of ExternalIdentity metadata object ids and new identifier (keyId) values
-and applies those new values to SAS metadata.
-
-    * Update ExternalIdentity Identifier (keyId) values for AD-synced users; 
-    %metacodaExtIdUpdate(
-        table=work.userExtIdUpdate,
-        extIdObjIdColName=extIdObjId,
-        extIdNewIdentifierColName=extIdNewIdentifier
-        );
-
-    * Update ExternalIdentity Identifier (keyId) values for AD-synced groups; 
-    %metacodaExtIdUpdate(
-        table=groupExtIdUpdate,
-        extIdObjIdColName=extIdObjId,
-        extIdNewIdentifierColName=extIdNewIdentifier
-        );
-
-See the sample [metacodaExtIdUpdateSample.sas](samples/metacodaExtIdUpdateSample.sas) for a more
-in-depth example of how a keyId migration can be done with the help of the Metacoda Identity Sync
-Plug-in.
-
-## Identity Sync Profiles
-
-Metacoda Identity Sync Profiles (IDSPs) are XML files, with a file extension of .idsp, that contain
-configuration information required for the Metacoda Identity Sync Plug-in to synchronize target
-SAS metadata identities (users and groups) with source identities, such as users and groups from
-Microsoft Active Directory.
-The Metacoda Identity Sync Plug-in can be used interactively, within the SAS Management Console, to
-manually preview any changes before applying them to SAS metadata. Alternatively, Identity Sync
-Profiles can also be processed by the Metacoda Plug-ins Batch Interface so that automatic identity
-synchronizations can be regularly scheduled.  
-
-Identity Sync Profiles are usually created by using the Metacoda Identity Sync Profile Wizard
-within SAS Management Console. This wizard only provides access to the most commonly used
-configurable elements. To access to some of the more advanced features you will need to edit
-the IDSP XML directly. The examples in this repository are provided to show how those features
-can be added to an IDSP.
-
-* [idsync-ad-basic.idsp](samples/idsync-ad-basic.idsp): A basic example for synchronizing identities
-  in a SAS metadata server with Microsoft Active Directory. All of the other examples below can be
-  compared with this basic example to review the XML changes required. 
-* [idsync-ad-capture-data-other-attrs.idsp](samples/idsync-ad-capture-data-other-attrs.idsp):
-   Demonstrates how to capture intermediate, otherwise temporary, working tables used in the
-   identity sync process so those tables can also be used for custom post-processing outside
-   of the Metacoda Identity Sync Plug-in. Also shows how to capture any additional AD object
-   attributes required for that custom post-processing e.g. sAMAccountName, distinguishedName and 
-   objectGUID.
+See [Trademarks](docs/about/trademarks.md)

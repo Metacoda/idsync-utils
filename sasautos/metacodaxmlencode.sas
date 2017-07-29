@@ -6,6 +6,9 @@ SAS Macro: metacodaXMLEncode
 Purpose:
    Encodes the supplied text so that it can be used in an XML file or stream.
 
+Documentation:
+    https://metacoda.github.io/idsync-utils/sasautos/metacodaXMLEncode
+
 Authors:
    Paul Homes <paul.homes@metacoda.com>
 

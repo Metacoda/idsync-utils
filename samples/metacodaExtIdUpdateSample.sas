@@ -32,12 +32,12 @@ Purpose:
     for an unchanging unique id for objects in Active Directory. 
      
     Remember that updating existing metadata is only one part of the keyId
-    migration process. You will also need to update your regular synchronization
+    migration process. You will also need to update your regular synchronisation
     process to use the new keyId choices. If you use the Metacoda Identity Sync
     Plug-in then you will need to edit your Identity Sync Profile (.idsp file)
     either using the Metacoda Identity Sync Profile Wizard within SAS Management
     Console, or by directly editing the XML in the .idsp file.
-    If you use custom SAS code for your regular synchronization then you will
+    If you use custom SAS code for your regular synchronisation then you will
     need to update that code in the relevant places.
    
 Authors:

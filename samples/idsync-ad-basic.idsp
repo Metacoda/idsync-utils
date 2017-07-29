@@ -7,7 +7,7 @@ Sample: idsync-ad-basic.idsp
 Purpose:
 
 An example/template for a basic Metacoda Identity Sync Profile (IDSP) that
-synchronizes between a single Active Directory server (ad.example.com) and
+synchronises between a single Active Directory server (ad.example.com) and
 the current SAS Metadata Server connection (either within SAS Management
 Console, when using the Metacoda Identity Sync Plug-in, or a
 MetadataConnection, when used with the Metacoda Plug-ins Batch Interface).
@@ -15,11 +15,11 @@ MetadataConnection, when used with the Metacoda Plug-ins Batch Interface).
 No encryption is used for the connection to AD (LDAP protocol on port 389)
 and simple plain-text authentication is done (not recommended).
 
-Two specific AD groups have been targeted for synchronization, and all
+Two specific AD groups have been targeted for synchronisation, and all
 of their members will be targeted too. This includes all nested groups,
 to any level of nesting, and all user members of all of these groups.
 
-Any previously synchronized SAS users and groups that are no longer found
+Any previously synchronised SAS users and groups that are no longer found
 within the set of targeted AD users and groups will be tag-deleted. That
 is they will be tagged for manual deletion within SAS metadata and
 effectively disabled (all of their group/role memberships and logins

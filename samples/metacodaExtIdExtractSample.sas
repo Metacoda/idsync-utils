@@ -58,7 +58,7 @@ run;
 * -----------------------------------------------------------------------------;
 
 * Sample 2: extract basic attributes for ExternalIdentity objects created through
-  identity synchronization of users (Person objects) when using the tag
+  identity synchronisation of users (Person objects) when using the tag
   'Active Directory Import'
   ;
 
@@ -75,7 +75,7 @@ run;
 * -----------------------------------------------------------------------------;
 
 * Sample 3: extract basic attributes for ExternalIdentity objects created through
-  identity synchronization of groups (IdentityGroup objects) when using the tag
+  identity synchronisation of groups (IdentityGroup objects) when using the tag
   'Active Directory Import'
   Additionally generate debug info and capture the XML files in /tmp
   ;

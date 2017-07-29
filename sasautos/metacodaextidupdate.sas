@@ -5,40 +5,12 @@ SAS Macro: metacodaExtIdUpdate
 
 WARNING: THIS MACRO UPDATES SAS METADATA.
    
-    When provided with correct parameters, and running in an environment with
-    valid SAS metadata options, this macro will update SAS metadata
-    ExternalIdentity objects which may break any existing identity sync process
-    you current have operating, and has the potential to DELETE users and group
-    at the next sync operation unless you have delete-protection in your sync
-    process.
-       
-    Do not modify and run this program unless it is your intention to update
-    ExternalIdentity metadata, you are fully aware of the potential consequences,
-    and are confident you have adequate SAS metadata backups so you can revert
-    the process if required.
-        
-    If you are unsure please contact Metacoda Support <support@metacoda.com>
-    to discuss further.
-
 Purpose:
    Updates ExternalIdentity metadata object Identifier attribute values with new values
    obtained from a supplied SAS table.
    
-   Can be used as a one-off exercise to change identity sync keyId values e.g.
-   1) Migrating from sAMAccountName to objectGUID for users (metadata Person objects)
-   2) Migrating from distinguishedName to objectGUID for groups (metadata IdentityGroup objects)
-
-Parameters:
-   table: [MANDATORY] The (1 or 2 level) name of an input table containing the ExternalIdentity
-      Identifier values to update.
-   extIdObjIdColName: [MANDATORY] The name of the column in the supplied table that contains the
-      metadata object id values for the ExternalIdentity objects to be updated.
-   extIdNewIdentifierColName: [MANDATORY] The name of the column in the supplied table that
-      contains the new ExternalIdentity Identifier values.
-   xmlDir: [OPTIONAL] Path to a directory where PROC METADATA request and response XML files
-      will be written. If unspecified the work directory path will be used by default.
-   debug: [OPTIONAL] A flag (0/1) indicating whether to generate additional debug info for
-      troubleshooting purposes. The default is zero for no debug.
+Documentation:
+    https://metacoda.github.io/idsync-utils/sasautos/metacodaExtIdUpdate
 
 Authors:
    Paul Homes <paul.homes@metacoda.com>

@@ -2,6 +2,9 @@
 /.idea
 /*.iml
 
+# Ignore MkDocs generated site
+/site/
+
 # Ignore any personal SAS autoexec for testing samples.
 samples/autoexec.sas
 

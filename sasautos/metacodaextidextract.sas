@@ -5,22 +5,9 @@ SAS Macro: metacodaExtIdExtract
 
 Purpose:
    Extracts a table of basic attribute values for SAS metadata ExternalIdentity objects.
-   This can be used as a look up table when when changing identity sync keyId values e.g.
-   1) Migrating from sAMAccountName to objectGUID for users (metadata Person objects)
-   2) Migrating from distinguishedName to objectGUID for groups (metadata IdentityGroup objects)
 
-Parameters:
-   table: [MANDATORY] The output table name (1 or 2 level) that will be overwritten.
-   context: [OPTIONAL]  If specified, will limit the output to ExternalIdentity
-      objects with the specified Context attribute value.
-      e.g. Active Directory Import
-   associatedModelType: [OPTIONAL] If specified, will limit the output to ExternalIdentity
-      objects that are associated with metadata objects of the specified model type.
-      e.g. Person or IdentityGroup
-   xmlDir: [OPTIONAL] Path to a directory where PROC METADATA request, response, and map XML
-       files will be written. If unspecified the work directory path will be used by default.
-   debug: [OPTIONAL] A flag (0/1) indicating whether to generate additional debug info for
-      troubleshooting purposes. The default is zero for no debug.
+Documentation:
+    https://metacoda.github.io/idsync-utils/sasautos/metacodaExtIdExtract
 
 Authors:
    Paul Homes <paul.homes@metacoda.com>
