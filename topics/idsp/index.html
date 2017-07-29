@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Metacoda Pty Ltd">
+  
+  <title>Identity Sync Profiles & Process - Metacoda Identity Sync Utilities</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Identity Sync Profiles & Process";
+    var mkdocs_page_input_path = "topics/idsp.md";
+    var mkdocs_page_url = "/topics/idsp/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Metacoda Identity Sync Utilities</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Intro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Topics</span></li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Identity Sync Profiles & Process</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#identity-sync-profiles-process">Identity Sync Profiles &amp; Process</a></li>
+                
+                    <li><a class="toctree-l4" href="#identity-sync-process-overview">Identity Sync Process Overview</a></li>
+                
+                    <li><a class="toctree-l4" href="#single-basic-identity-sync-profile">Single (Basic) Identity Sync Profile</a></li>
+                
+                    <li><a class="toctree-l4" href="#multiple-hybrid-identity-sync-profiles">Multiple (Hybrid) Identity Sync Profiles</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ad-domains/">Active Directory Domains</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../canonical-tables/">Using Canonical Tables</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>SAS Macros</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaExtIdExtract/">%metacodaExtIdExtract</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaExtIdUpdate/">%metacodaExtIdUpdate</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaXMLEncode/">%metacodaXMLEncode</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Samples</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../samples/idsp-samples/">Sample Identity Sync Profiles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../samples/sas-samples/">Sample SAS Programs</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../resources/">Resources</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/license/">License</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/trademarks/">Trademarks</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Metacoda Identity Sync Utilities</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Topics &raquo;</li>
+        
+      
+    
+    <li>Identity Sync Profiles & Process</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="identity-sync-profiles-process">Identity Sync Profiles &amp; Process</h1>
+<p>Metacoda Identity Sync Profiles (IDSPs) are XML files, with a file extension of .idsp, that contain
+configuration information as required for the
+<a href="https://www.metacoda.com/en/products/security-plug-ins/identity-sync/">Metacoda Identity Sync Plug-in</a>
+to synchronise target SAS® metadata identities (users and groups) with source identities, such as
+users and groups from Microsoft Active Directory.
+The Metacoda Identity Sync Plug-in can be used interactively, within the SAS Management Console, to
+manually preview any changes before applying them to SAS metadata. Alternatively, Identity Sync
+Profiles can also be processed by the Metacoda Plug-ins Batch Interface so that automatic identity
+synchronisations can be regularly scheduled.  </p>
+<p>IDSPs are usually created by using the Metacoda Identity Sync Profile Wizard within SAS Management
+Console. This wizard only provides access to the most commonly used configurable elements.
+To access to some of the more advanced features you will need to edit the IDSP XML directly.
+Manual edits will be preserved if you subsequently use the wizard to load, modify, and save the
+IDSP file. If you manually edit the IDSP while it is still open in the Identity Sync Plug-in you
+will need to re-open it to pick up those manual changes.     </p>
+<p>This documentation and the associated samples are provided to show how some of the these features
+are represented in the IDSP XML in case you need to use them.</p>
+<h2 id="identity-sync-process-overview">Identity Sync Process Overview</h2>
+<p>At the heart of the Metacoda Identity Sync process are the well-known and time-proven SAS %MDU
+macros as documented in the
+<a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/viewer.htm#p1ar98lajfgm4jn1wa1h6e19jjre.htm">User Import Macros</a>
+appendix of the <em>SAS 9.4 Intelligence Platform: Security Administration Guide</em>. The Metacoda
+Identity Sync Plug-in wraps a further framework around these macros including:</p>
+<ul>
+<li>A SAS Management Console hosted point and click interface to create and use configurations
+  (IDSPs), and interactively preview and apply identity changes to SAS metadata;</li>
+<li>A batch interface for the scheduled automatic application of identity changes to SAS metadata;</li>
+<li>A custom Java-based process that provides a variety of methods to target identities from
+  a Microsoft Active Directory source, including handling of the following:<ul>
+<li>Deeply nested groups  </li>
+<li>Paginated queries to support extraction of large numbers of identities and groups with more
+  than 1,500 member.  </li>
+<li>Support for following group members into other domains in the same forest. </li>
+</ul>
+</li>
+<li>Support for combining identities from multiple identity sources, such as domains in multiple AD
+  forests, through Hybrid IDSPs.  </li>
+<li>Support for sourcing identities from an Identity Sync Export (IDSX) file, an XML format that
+  can be used for identity sync between different SAS environments, or from other identity
+  providers.</li>
+<li>The generation of Audit Reports to document the use of the identity sync process over time;</li>
+<li>Code hooks for customisation of the identity sync process.  </li>
+</ul>
+<p>The following sections on basic and hybrid IDSPs provide some more detail on this process. </p>
+<h2 id="single-basic-identity-sync-profile">Single (Basic) Identity Sync Profile</h2>
+<p>Most implementation use a single basic IDSP that targets a single provider of identities such
+as a single Microsoft Active Directory (AD) domain. The diagram below illustrates this process
+(which is controlled by the contents of the IDSP): </p>
+<p><img alt="Basic IDSP Diagram" src="../img/idsync-single-ad-domain.png" /></p>
+<ul>
+<li><strong><em>Step 0 Initialisation</em></strong>: A SAS Workspace Server is spawned, and 3 temporary libraries
+  (IDS_SRC, IDS_TGT,  IDS_CHG) are configured to house the
+  <a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/p1o31lg0trorn8n1rketxxe1jbr1.htm">canonical</a>
+  and change tables as required by the SAS %MDU macros. Empty canonical tables are created using
+  the standard SAS
+  <a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/p03uv2agudmy9cn1kn8hoek7so6u.htm">%MDUIMPC</a>
+  macro. </li>
+<li><strong><em>Step 1 Source Extract</em></strong>: A custom Java-based process connects to an AD server and extracts
+  information for the targeted identities (users and groups) as specified in the IDSP.</li>
+<li><strong><em>Step 2 Source Upload</em></strong>: The source identities extracted in step 1 are uploaded into tables in
+  the IDS_SRC library.</li>
+<li><strong><em>Step 3 Target Extract</em></strong>: The standard SAS
+  <a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/n024i4nqa5b12qn1lfek77h69ns5.htm">%MDUEXTR</a> 
+  macro is used to extract target identities from the SAS metadata server into canonical tables in
+  the IDS_TGT library.</li>
+<li><strong><em>Step 4 Compare</em></strong>:  The standard SAS
+  <a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/p0fmb77lv8a6k5n1ciomw5jik6ft.htm">%MDUCMP</a>
+  macro is used to compare source identities from the IDS_SRC library with target identities from
+  the IDS_TGT library.
+  Any sync exceptions specified in the IDSP are also provided to the macro so that those identities
+  can be ignored as required.
+  Any changes that need to be applied to the target SAS identities to get them back into sync with
+  the source AD identities will be generated as change tables the IDS_CHG library.
+  If tag-deletion has been specified in the IDSP then Metacoda augments this process by converting
+  any user/group deletions into updates to represent tag-deletes.</li>
+<li><strong><em>Step 5 Validate</em></strong>: The standard SAS
+  <a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/n13q0r5qkhhg5un198d7zpgr4pbu.htm">%MDUCHGV</a>
+  macro is used to valid any changes present in
+  IDS_CHG libraries change tables. If any validation errors are detected the identity sync process
+  is aborted.</li>
+<li><strong><em>Step 6 Apply Changes</em></strong>: If there are changes to be applied, and no validation errors, then
+  the standard SAS
+  <a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/n0s5720n7tlwtfn1lkqx68z0bu82.htm">%MDUCHGLB</a>
+  macro is used to apply changes to SAS metadata using the change tables in the IDS_CHG library.</li>
+</ul>
+<p>A basic IDSP to implement synchronisation with a single Active Directory server has the following
+general structure:   </p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;IdentitySyncProfile ...&gt;
+  &lt;IdentitySource type="activeDirectoryServer"/&gt;
+  &lt;LDAPConfig ... /&gt;
+  &lt;GroupSync ...&gt; 
+    &lt;IncludedGroups&gt;
+      &lt;Group name="Group1" ... /&gt;
+      &lt;Group name="Group2" ... /&gt;
+      ...
+    &lt;/IncludedGroups&gt;
+  &lt;/GroupSync&gt;
+  &lt;UserSync ... /&gt;
+  &lt;Options ... /&gt;
+  &lt;SyncExceptions&gt;
+    &lt;SyncException ... /&gt;
+    ...
+  &lt;/SyncExceptions&gt;
+&lt;/IdentitySyncProfile&gt;
+</code></pre>
+<ul>
+<li>The <code>&lt;IdentitySource&gt;</code> tag indicates the source for identities, in this case AD.</li>
+<li>The <code>&lt;LDAPConfig&gt;</code> contains details of how to connect to AD: host name, port, protocol,
+  credentials, whether to use encryption, base DNs and filters for search, attribute mappings etc.</li>
+<li>The <code>&lt;GroupSync&gt;</code> tag specifies the basis for identifying targeted groups, excluded groups, and
+  general group related options.    </li>
+<li>The <code>&lt;UserSync&gt;</code> tag specifies the basis for identifying targeted users, excluded users, and
+  general user related options.</li>
+<li>The <code>&lt;Options&gt;</code> tag has some generic options for the sync process.</li>
+<li>The <code>&lt;SyncExceptions&gt;</code> tag is used to specify any identities to be ignored.    </li>
+</ul>
+<p>See <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-basic.idsp">https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-basic.idsp</a> for a
+complete example. </p>
+<h2 id="multiple-hybrid-identity-sync-profiles">Multiple (Hybrid) Identity Sync Profiles</h2>
+<p>In more complex environments there might be a need to synchronise SAS identities from multiple
+independant sources. Hybrid Identity Sync Profiles are available in situations where is not
+possible to obtain all required SAS identities using a single Identity Sync Profile.</p>
+<p>If you were to try to simply use multiple IDSPs in sequence, the identities that were added by the
+first IDSP would be deleted by the processing of the second IDSP. This is why we need a hybrid IDSP
+that collects all of the identities from multiple sources before it attempts to synchronise them
+with SAS metadata.   </p>
+<p>A hybrid IDSP is structured as a parent, or wrapper, IDSP that references individual child, or
+included, IDSPs like so:      </p>
+<pre><code>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;IdentitySyncProfile ...&gt;
+  &lt;IdentitySource type="hybrid"/&gt;
+  &lt;IncludeIdentitySyncProfile path="d1.idsp"/&gt;
+  &lt;IncludeIdentitySyncProfile path="d2.idsp"/&gt;
+  ...
+  &lt;Options ... /&gt;
+  &lt;SyncExceptions&gt;
+    &lt;SyncException ... /&gt;
+    ...
+  &lt;/SyncExceptions&gt;
+&lt;/IdentitySyncProfile&gt;
+</code></pre>
+<p>In the IDSP above, the <code>&lt;IdentitySource&gt;</code> tag identifies it as a Hybrid IDSP, and the multiple
+<code>&lt;IncludeIdentitySyncProfile&gt;</code> tags identity the other child IDSPs to be used to source identities.
+You can have as many <code>&lt;IncludeIdentitySyncProfile&gt;</code> tags as necessary.</p>
+<p>The Identity Sync Profile Wizard cannot currently be used to create a Hybrid IDSP - it must be
+created using an XML or text editor using the above, or one of the samples in this repository,
+as a template. The individual included child IDSPs can be generated using the wizard, although
+you would not normally apply the changes from a child IDSP on its own except when testing it in a
+sandpit environment.</p>
+<p>The Identity Sync Process differs slightly with Hybrid IDSPs. The diagram below illustrates this,
+where a Hybrid IDSP includes 2 child IDSPs, <em>d1</em> and <em>d2</em>:</p>
+<p><img alt="Hybrid IDSP Diagram" src="../img/idsync-hybrid-ad-domains.png" /></p>
+<ul>
+<li><strong><em>Step 0 Initialisation</em></strong>: A SAS Workspace Server is spawned, the IDS_SRC, IDS_TGT, and IDS_CHG
+  temporary libraries are configured, and empty canonical tables added using the standard SAS
+  %MDUIMPC macro. </li>
+<li><strong><em>Step 1 Source #1 Extract (d1)</em></strong>: Source identities are fetched from the first AD server as
+  specified in the first child IDSP d1.idsp.</li>
+<li><strong><em>Step 2 Source #1 Upload (d1)</em></strong>: The first batch of source identities from step 1 are uploaded
+  and appended to the IDS_SRC tables.</li>
+<li><strong><em>Step 3 Source #2 Extract (d2)</em></strong>: Source identities are fetched from the second AD server as
+  specified in the second child IDSP d2.idsp.</li>
+<li><strong><em>Step 4 Source #2 Upload (d2)</em></strong>: The second batch of source identities from step 3 are
+  uploaded and appended to the IDS_SRC tables.</li>
+<li><strong><em>Step 5 Target Extract</em></strong>: The standard SAS %MDUEXTR macro is used to extract target identities
+  from the SAS metadata server into canonical tables in the IDS_TGT library.</li>
+<li><strong><em>Step 6 Compare</em></strong>:  The standard SAS %MDUCMP macro is used to compare the combined set of
+  source identities from the IDS_SRC library with target identities from the IDS_TGT library to
+  generate change tables the IDS_CHG library.
+  Any sync exceptions specified in the <strong><em>Hybrid IDSP</em></strong> are also provided to the macro so that
+  those identities can be ignored as required. Any sync exceptions specified in the child IDSPs are
+  ignored. 
+  If tag-deletion has been specified in the <strong><em>Hybrid IDSP</em></strong> then Metacoda augments this process
+  by converting any user/group deletions into updates to represent tag-deletes.</li>
+<li><strong><em>Step 7 Validate</em></strong>: The standard SAS %MDUCHGV macro is used to valid any changes present in
+  IDS_CHG libraries change tables. If any validation errors are detected the identity sync process
+  is aborted.</li>
+<li><strong><em>Step 8 Apply Changes</em></strong>: If there are changes to be applied, and no validation errors, then
+  the standard SAS %MDUCHGLB macro is used to apply changes to SAS metadata using the change tables
+  in the IDS_CHG library.</li>
+</ul>
+<p>Some other noteworthy differences in Hybrid IDSP processing when compared to single IDSP processing:</p>
+<ul>
+<li>Any <code>&lt;Options&gt;</code> or <code>&lt;SyncExceptions&gt;</code> tags, and any code hooks except <code>&lt;PreSourceExtractCode&gt;</code>
+  and <code>&lt;PostSourceExtractCode&gt;</code>, that are specified in child IDSPs are ignored.</li>
+<li><code>&lt;Options&gt;</code> and <code>&lt;SyncExceptions&gt;</code> tags are only considered when specified in the Hybrid IDSP.</li>
+<li>If <code>&lt;PreSourceExtractCode&gt;</code> and <code>&lt;PostSourceExtractCode&gt;</code> code hooks are specified in the Hybrid
+  IDSP then they are processed before and after all child IDSPs source identity extractions.</li>
+<li>Any <code>&lt;LDAPConfig&gt;</code>, <code>&lt;IDSXFileConfig&gt;</code>, <code>&lt;GroupSync&gt;</code>, and <code>&lt;UserSync&gt;</code> tags specified in the
+  Hybrid IDSP are ignored.</li>
+<li>All code hooks in the Hybrid IDSP are processed.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ad-domains/" class="btn btn-neutral float-right" title="Active Directory Domains">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../.." class="btn btn-neutral" title="Intro"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../.." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ad-domains/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Metacoda Pty Ltd">
+  
+  <title>Using Canonical Tables - Metacoda Identity Sync Utilities</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Using Canonical Tables";
+    var mkdocs_page_input_path = "topics/canonical-tables.md";
+    var mkdocs_page_url = "/topics/canonical-tables/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Metacoda Identity Sync Utilities</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Intro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Topics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../idsp/">Identity Sync Profiles & Process</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ad-domains/">Active Directory Domains</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Using Canonical Tables</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#using-canonical-tables">Using Canonical Tables</a></li>
+                
+                    <li><a class="toctree-l4" href="#switching-to-permanent-libraries">Switching to Permanent Libraries</a></li>
+                
+                    <li><a class="toctree-l4" href="#libraries-and-tables">Libraries and Tables</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>SAS Macros</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaExtIdExtract/">%metacodaExtIdExtract</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaExtIdUpdate/">%metacodaExtIdUpdate</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaXMLEncode/">%metacodaXMLEncode</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Samples</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../samples/idsp-samples/">Sample Identity Sync Profiles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../samples/sas-samples/">Sample SAS Programs</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../resources/">Resources</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/license/">License</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/trademarks/">Trademarks</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Metacoda Identity Sync Utilities</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Topics &raquo;</li>
+        
+      
+    
+    <li>Using Canonical Tables</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="using-canonical-tables">Using Canonical Tables</h1>
+<p>As explained in <a href="../idsp/">Identity Sync Profiles &amp; Process</a>, and shown in the diagram below,
+the Metacoda Identity Sync Process normally uses three temporary SAS libraries for intermediate
+<a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/p1o31lg0trorn8n1rketxxe1jbr1.htm">canonical</a>
+and change tables as required by the SAS %MDU macros.</p>
+<p><img alt="Canonical Tables in a Basic Identity Sync Process" src="../img/idsync-single-ad-domain.png" /></p>
+<p>These libraries are named IDS_SRC, IDS_TGT, and IDS_CHG, for source, target and change tables
+respectively. Unless otherwise specified in the Identity Sync Profile (IDSP), these libraries will
+be created as subdirectories of the temporary SAS WORK library/folder for the spawned SAS Workspace
+Server instance and automatically deleted then the workspace server instance is stopped when the
+process completes.        </p>
+<h2 id="switching-to-permanent-libraries">Switching to Permanent Libraries</h2>
+<p>Whilst the temporary nature of the IDS_SRC, IDS_TGT, and IDS_CHG libraries is appropriate for
+most scenarios, sometimes you might want to retain these tables after the identity sync process
+has completed. This might be for troubleshooting purposes or to re-use the tables for you own
+custom requirements.</p>
+<p>To make these libraries permanent, you need to select or create a directory in the file system of
+the SAS Workspace Server that will used for identity synchronisation, and ensure appropriate file
+system access controls to allow the workspace server operating system launch identity to create
+sub-directories and read/write SAS tables in those directories.</p>
+<p>Once you have a location, it can be specified by editing the IDSP in a text editor and adding a
+serverBaseDir attribute to the <code>&lt;Options&gt;</code> tag like so:     </p>
+<pre><code>&lt;IdentitySyncProfile ... /&gt;
+    ...
+    &lt;Options
+        ...
+        serverBaseDir=“Data/idsync”
+    /&gt;
+...
+&lt;/IdentitySyncProfile&gt;
+</code></pre>
+<p>The serverBaseDir value is a file system path that can be either relative or absolute. If a
+relative path is specified then it is relative to the SAS Application Server directory.
+For example, given the <em>Data/idsync</em> value specified above, if the SAS Application Server directory
+is <em>/opt/sas/config/Lev1/SASApp</em> then the following locations will be used for the three libraries:</p>
+<ul>
+<li>IDS_SRC: /opt/sas/config/Lev1/SASApp/Data/idsync/ids_src </li>
+<li>IDS_TGT: /opt/sas/config/Lev1/SASApp/Data/idsync/ids_tgt </li>
+<li>IDS_CHG: /opt/sas/config/Lev1/SASApp/Data/idsync/ids_chg </li>
+</ul>
+<p>The ids_src, ids_tgt, and ids_chg sub-directories will be automatically created if they do not
+already exist. </p>
+<h2 id="libraries-and-tables">Libraries and Tables</h2>
+<h3 id="ids_src-source-tables">IDS_SRC: Source Tables</h3>
+<p>The IDS_SRC library contains tables that represent source/master identities for synchronisation.
+These usually contain users and groups extracted from Microsoft Active Directory.
+When using a Hybrid IDSP, the tables will contain combined identity information from all sources.    </p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IDS_SRC.AUTHDOMAIN</td>
+<td>Standard SAS canonical table: authentication domains.</td>
+</tr>
+<tr>
+<td>IDS_SRC.EMAIL</td>
+<td>Standard SAS canonical table: email addresses for users.</td>
+</tr>
+<tr>
+<td>IDS_SRC.GRPMEMS</td>
+<td>Standard SAS canonical table: group/role members.</td>
+</tr>
+<tr>
+<td>IDS_SRC.IDGRPS</td>
+<td>Standard SAS canonical table: groups/roles.</td>
+</tr>
+<tr>
+<td>IDS_SRC.IDGRPS_X</td>
+<td>Metacoda table: groups/roles with extra attributes (1).</td>
+</tr>
+<tr>
+<td>IDS_SRC.IDS_EXCEPTION</td>
+<td>Metacoda table: sync exceptions (2).</td>
+</tr>
+<tr>
+<td>IDS_SRC.LOCATION</td>
+<td>Standard SAS canonical table: physical addresses for users.</td>
+</tr>
+<tr>
+<td>IDS_SRC.LOGINS</td>
+<td>Standard SAS canonical table: logins/accounts for users &amp; groups.</td>
+</tr>
+<tr>
+<td>IDS_SRC.PERSON</td>
+<td>Standard SAS canonical table: users.</td>
+</tr>
+<tr>
+<td>IDS_SRC.PERSON_X</td>
+<td>Metacoda table: users with extra attributes (1).</td>
+</tr>
+<tr>
+<td>IDS_SRC.PHONE</td>
+<td>Standard SAS canonical table: phone numbers for users.</td>
+</tr>
+</tbody>
+</table>
+<p>(1) The IDS_SRC.IDGRPS_X and IDS_SRC.PERSON_X tables are only populated if the IDSP LDAPConfig
+tag has the groupOtherAttrs and userOtherAttrs attributes specified respectively.
+These tables are copies of the corresponding IDS_SRC.IDGRPS and IDS_SRC.PERSON tables with
+additional X_ prefixed columns for each of the additional LDAP attributes specified. These extra
+attributes are not used in the normal Metacoda Identity Sync Process but may be of use in any
+custom processing requirements implemented in code hooks or elsewhere. </p>
+<p>(2) The IDS_SRC.IDS_EXCEPTION table is populated by the Metacoda Identity Sync Process from the sync
+exceptions specified in the IDSP (with <code>&lt;SyncException&gt;</code> tags). This table is provided to the
+standard SAS %MDUCMP macro during the identity comparison step, via the <em>EXCEPTIONS</em> parameter.</p>
+<h3 id="ids_tgt-target-tables">IDS_TGT: Target Tables</h3>
+<p>The IDS_TGT library contains tables that represent target identities for synchronisation: 
+users and groups currently in SAS metadata.
+The contents of this library is generated by the use of the standard SAS %MDUEXTR macro.</p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IDS_TGT.AUTHDOMAIN</td>
+<td>Standard SAS canonical table: authentication domains.</td>
+</tr>
+<tr>
+<td>IDS_TGT.EMAIL</td>
+<td>Standard SAS canonical table: email addresses for users.</td>
+</tr>
+<tr>
+<td>IDS_TGT.EMAIL_INFO</td>
+<td>Standard SAS canonical table: email addresses for users (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.GROUP_INFO</td>
+<td>Standard SAS canonical table: groups (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.GROUPLOGINS_INFO</td>
+<td>Standard SAS canonical table: logins/accounts for groups (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.GROUPMEMGROUPS_INFO</td>
+<td>Standard SAS canonical table: group/role group members (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.GROUPMEMPERSONS_INFO</td>
+<td>Standard SAS canonical table: group/role user members (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.GRPMEMS</td>
+<td>Standard SAS canonical table: group/role members.</td>
+</tr>
+<tr>
+<td>IDS_TGT.IDGRPS</td>
+<td>Standard SAS canonical table: groups/role.</td>
+</tr>
+<tr>
+<td>IDS_TGT.LOCATION</td>
+<td>Standard SAS canonical table: physical addresses for users.</td>
+</tr>
+<tr>
+<td>IDS_TGT.LOCATION_INFO</td>
+<td>Standard SAS canonical table: physical addresses for users (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.LOGINS</td>
+<td>Standard SAS canonical table: logins/accounts for users &amp; groups.</td>
+</tr>
+<tr>
+<td>IDS_TGT.LOGINS_INFO</td>
+<td>Standard SAS canonical table: logins/accounts for users (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.PERSON</td>
+<td>Standard SAS canonical table: users.</td>
+</tr>
+<tr>
+<td>IDS_TGT.PERSON_INFO</td>
+<td>Standard SAS canonical table: users (additional info).</td>
+</tr>
+<tr>
+<td>IDS_TGT.PHONE</td>
+<td>Standard SAS canonical table: phone numbers for users.</td>
+</tr>
+<tr>
+<td>IDS_TGT.PHONE_INFO</td>
+<td>Standard SAS canonical table: phone numbers for users (additional info).</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ids_chg-change-tables">IDS_CHG: Change Tables</h3>
+<p>The IDS_CHG library contains tables that represent changes required to target (SAS metadata)
+identities to bring them back in sync with the sources identities. 
+The contents of this library is generated by the use of the standard SAS %MDUCMP macro and may be
+further customized by post-processing if the tag-delete feature has been enabled in the IDSP. </p>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>IDS_CHG.AUTHDOMAIN_ADD</td>
+<td>Standard SAS change table: authentication domains to be added.</td>
+</tr>
+<tr>
+<td>IDS_CHG.AUTHDOMAIN_DELETE</td>
+<td>Standard SAS change table: authentication domains to be deleted.</td>
+</tr>
+<tr>
+<td>IDS_CHG.AUTHDOMAIN_SUMMARY</td>
+<td>Standard SAS change table: summary of authentication domains.</td>
+</tr>
+<tr>
+<td>IDS_CHG.AUTHDOMAIN_UPDATE</td>
+<td>Standard SAS change table: authentication domains to be updated.</td>
+</tr>
+<tr>
+<td>IDS_CHG.EMAIL_ADD</td>
+<td>Standard SAS change table: user email addresses to be added.</td>
+</tr>
+<tr>
+<td>IDS_CHG.EMAIL_DELETE</td>
+<td>Standard SAS change table: user email addresses to be deleted.</td>
+</tr>
+<tr>
+<td>IDS_CHG.EMAIL_UPDATE</td>
+<td>Standard SAS change table: user email addresses to be updated.</td>
+</tr>
+<tr>
+<td>IDS_CHG.GRPMEMS_ADD</td>
+<td>Standard SAS change table: members to be added to groups/roles.</td>
+</tr>
+<tr>
+<td>IDS_CHG.GRPMEMS_DELETE</td>
+<td>Standard SAS change table: members to be removed from groups/roles</td>
+</tr>
+<tr>
+<td>IDS_CHG.IDGRPS_ADD</td>
+<td>Standard SAS change table: groups to be added.</td>
+</tr>
+<tr>
+<td>IDS_CHG.IDGRPS_DELETE</td>
+<td>Standard SAS change table: groups to be deleted.</td>
+</tr>
+<tr>
+<td>IDS_CHG.IDGRPS_SUMMARY</td>
+<td>Standard SAS change table: summary of groups.</td>
+</tr>
+<tr>
+<td>IDS_CHG.IDGRPS_UPDATE</td>
+<td>Standard SAS change table: groups to be updated.</td>
+</tr>
+<tr>
+<td>IDS_CHG.IDS_ERROR</td>
+<td>A table populated if changes are not valid. See the SAS %MDUCHGV macro <em>ERRORSDS</em> parameter.</td>
+</tr>
+<tr>
+<td>IDS_CHG.IDS_FAILED_OBJS</td>
+<td>A table populated if changes failed to be applied to SAS metadata. See the SAS %MDUCHGLB macro <em>FAILEDOBJS</em> parameter.</td>
+</tr>
+<tr>
+<td>IDS_CHG.LOCATION_ADD</td>
+<td>Standard SAS change table: user physical addresses to be added.</td>
+</tr>
+<tr>
+<td>IDS_CHG.LOCATION_DELETE</td>
+<td>Standard SAS change table: user physical addresses to be deleted.</td>
+</tr>
+<tr>
+<td>IDS_CHG.LOCATION_UPDATE</td>
+<td>Standard SAS change table: user physical addresses to be updated.</td>
+</tr>
+<tr>
+<td>IDS_CHG.LOGINS_ADD</td>
+<td>Standard SAS change table: user &amp; group logins/accounts to be added.</td>
+</tr>
+<tr>
+<td>IDS_CHG.LOGINS_DELETE</td>
+<td>Standard SAS change table: user &amp; group logins/accounts to be deleted.</td>
+</tr>
+<tr>
+<td>IDS_CHG.PERSON_ADD</td>
+<td>Standard SAS change table: users to be added.</td>
+</tr>
+<tr>
+<td>IDS_CHG.PERSON_DELETE</td>
+<td>Standard SAS change table: users to be deleted.</td>
+</tr>
+<tr>
+<td>IDS_CHG.PERSON_SUMMARY</td>
+<td>Standard SAS change table: summary of users.</td>
+</tr>
+<tr>
+<td>IDS_CHG.PERSON_UPDATE</td>
+<td>Standard SAS change table: users to be updated.</td>
+</tr>
+<tr>
+<td>IDS_CHG.PHONE_ADD</td>
+<td>Standard SAS change table: user phone numbers to be added.</td>
+</tr>
+<tr>
+<td>IDS_CHG.PHONE_DELETE</td>
+<td>Standard SAS change table: user phone numbers to be deleted.</td>
+</tr>
+<tr>
+<td>IDS_CHG.PHONE_UPDATE</td>
+<td>Standard SAS change table: user phone numbers to be updated.</td>
+</tr>
+</tbody>
+</table>
+<p>If the IDSP <code>&lt;Options&gt;</code> tag has the <em>tagDeletedIdentities</em> attribute set to <em>true</em>, indicating
+tag-deletion has been requested, then these change tables will be post-processed by the Metacoda
+Identity Sync Process to convert user and group deletions into tag-deletions (updates). Tag
+deletion, is a reversible process, that marks SAS users and groups as ready to be manually deleted,
+and effectively disables them without destroying other metadata relationships they may have.</p>
+<p>When users and groups are tag-deleted:</p>
+<ul>
+<li>Tag deleted User and Group display names are prefixed with text as specified in the IDSP
+  <code>&lt;Options&gt;</code> tag <em>deletedIdentityTag</em> attribute so that they sort together (e.g. "Bob" becomes
+  "[DELETED] Bob").</li>
+<li>Tag deleted User and Group logins are removed, so that nobody can login to the SAS platform as
+  those identities.</li>
+<li>Tag deleted User and Group role and group memberships are removed.</li>
+</ul>
+<p>These tag deletions will be seen as appropriate modifications to the change tables above.
+For example this includes, but is not limited to, the IDS_CHG.PERSON_DELETE, IDS_CHG.IDGRPS_DELETE
+being emptied and corresponding rows added to the IDS_CHG.PERSON_UPDATE, IDS_CHG.IDGRPS_UPDATE
+tables.</p>
+<p>The IDS_CHG library folder can also contain PROC METADATA XML request and response files if
+the <code>&lt;Options&gt;</code> tag has debug set to true.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../sasautos/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ad-domains/" class="btn btn-neutral" title="Active Directory Domains"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../ad-domains/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../sasautos/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
