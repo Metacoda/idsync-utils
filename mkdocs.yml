@@ -11,6 +11,7 @@ pages:
     - Identity Sync Profiles & Process: 'topics/idsp.md'
     - Active Directory Domains: 'topics/ad-domains.md'
     - Using Canonical Tables: 'topics/canonical-tables.md'
+    - Exclusions & Exceptions: 'topics/exclusions.md'
   - Reference:
     - SAS Macros:
       - Overview: 'sasautos/index.md'
