@@ -28,7 +28,7 @@ sub-directories and read/write SAS tables in those directories.
 Once you have a location, it can be specified by editing the IDSP in a text editor and adding a
 serverBaseDir attribute to the `<Options>` tag like so:     
 
-    <IdentitySyncProfile ... />
+    <IdentitySyncProfile ...>
         ...
         <Options
             ...

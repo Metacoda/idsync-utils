@@ -117,7 +117,7 @@ libname ids_src 'Data/idsync/ids_src';
     The serverBaseDir value specifies a directory on the SAS application
     server where ids_src, ids_trg, and ids_chg libraries and tables will
     be created. These are normally placed in the SAS work location, and
-    deleted after use, so this change allows us to keep them fur future use.
+    deleted after use, so this change allows us to keep them for future use.
     A relative serverBaseDir path, as shown above, is relative to SAS
     application server directory e.g. /opt/sas/config/Lev1/SASApp
     You can use an absolute path if required.
