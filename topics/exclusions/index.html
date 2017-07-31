@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Metacoda Pty Ltd">
+  
+  <title>Exclusions & Exceptions - Metacoda Identity Sync Utilities</title>
+  
+
+  <link rel="shortcut icon" href="../../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../../css/highlight.css">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Exclusions & Exceptions";
+    var mkdocs_page_input_path = "topics/exclusions.md";
+    var mkdocs_page_url = "/topics/exclusions/";
+  </script>
+  
+  <script src="../../js/jquery-2.1.1.min.js"></script>
+  <script src="../../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
+  <script src="../../js/theme.js"></script> 
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="../.." class="icon icon-home"> Metacoda Identity Sync Utilities</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../..">Intro</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Topics</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../idsp/">Identity Sync Profiles & Process</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../ad-domains/">Active Directory Domains</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../canonical-tables/">Using Canonical Tables</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Exclusions & Exceptions</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#exclusions-exceptions">Exclusions &amp; Exceptions</a></li>
+                
+                    <li><a class="toctree-l4" href="#exclusions">Exclusions</a></li>
+                
+                    <li><a class="toctree-l4" href="#exceptions">Exceptions</a></li>
+                
+            
+            </ul>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Reference</span></li>
+
+        
+            
+    <ul class="subnav">
+    <li><span>SAS Macros</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/">Overview</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaExtIdExtract/">%metacodaExtIdExtract</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaExtIdUpdate/">%metacodaExtIdUpdate</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../sasautos/metacodaXMLEncode/">%metacodaXMLEncode</a>
+        
+    </li>
+
+        
+    </ul>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>Samples</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../samples/idsp-samples/">Sample Identity Sync Profiles</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../samples/sas-samples/">Sample SAS Programs</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../../resources/">Resources</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <ul class="subnav">
+    <li><span>About</span></li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/license/">License</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/trademarks/">Trademarks</a>
+        
+    </li>
+
+        
+    </ul>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../..">Metacoda Identity Sync Utilities</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Topics &raquo;</li>
+        
+      
+    
+    <li>Exclusions & Exceptions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="exclusions-exceptions">Exclusions &amp; Exceptions</h1>
+<p>There are two ways to prevent changes for specified users and groups in SAS metadata when using the
+Metacoda Identity Sync Process: Exclusions and Exceptions.
+Both methods have the same goals: prevent specific users or groups from being added to SAS
+metadata; and avoid updating or deleting specific SAS identity metadata.
+There are however some differences in implementation that may make you either choose one of the
+methods or a combination of the two.    </p>
+<p>As highlighted in the diagram below, exclusions are handled during the Java-based source identity
+extraction step, whereas exceptions are handled during the SAS language based source/target
+comparison step. More specifically, exceptions are handled using the standard SAS %MDUCMP macro's
+support for an exceptions table. </p>
+<p><img alt="Exclusions &amp; Exceptions Diagram" src="../img/idsync-exclusions-exceptions.png" /></p>
+<h2 id="exclusions">Exclusions</h2>
+<p>Exclusions are used to prevent certain source identities, such as Active Directory (AD) users
+and groups, from getting to the <a href="../canonical-tables/">canonical tables</a> and being considered
+in the comparison with existing target SAS metadata identities.
+Exclusions are specified in the Identity Sync Profile (IDSP) and can be added either using the
+Identity Sync Profile Wizard or by editing the IDSP XML directly.
+There are several reasons why you might want to exclude identities at this stage:</p>
+<ul>
+<li>You are using a sync-basis that targets all users/groups under a certain Organizational Unit (OU)
+  in the directory, but need to exclude some users/groups that are not SAS platform related.</li>
+<li>You are using a sync-basis that targets selected groups and their members but need to exclude
+  some user/group members that are not SAS platform related.</li>
+<li>You might have service identities that need to be ignored and, as group members or descendants
+  of an OU, would otherwise be targeted for synchronisation.</li>
+</ul>
+<p>One of the key ways that exclusions differ from exceptions is in the handling of excluded group
+members. During source identity extraction, if a group is excluded then its members are ignored.
+This includes nested groups and their members too. A member of an excluded group will then only be
+included if it is either explicitly included in the IDSP, or is a member of another group which
+has not been excluded. This differs from exceptions in that if a group is ignored during exception
+processing then it has no bearing on that groups members (unless the filter condition is such that
+it affects some members too). This difference in the handling of exclusions and exceptions can be
+used beneficially. If you want to ignore a group and its members use an exclusion. If you
+want to ignore the group but keep its members use an exception instead.</p>
+<p>Another difference is in support for wildcards. Exclusions target a specific identity without
+support for wildcards. Exceptions, as SAS WHERE clause expressions, support
+the use of wildcards to ignore a set of identities based on similarities in their names for
+example.  If you need wildcard support choose exceptions over exclusions.</p>
+<p>The following fragment shows how user and group exclusions are represented in an IDSP: </p>
+<pre><code>&lt;IdentitySyncProfile ...&gt;
+  ...
+  &lt;GroupSync ...&gt;
+    ...
+    &lt;ExcludedGroups&gt;
+      &lt;Group name="Group1" dn="CN=Group1,CN=Users,DC=corp,DC=example,DC=com" guid="4db9ff77-2096-4748-b0ce-7b0f3aa7942d"/&gt;
+      &lt;Group name="Group2" dn="CN=Group2,CN=Users,DC=corp,DC=example,DC=com" guid="acbf94df-d5ac-46ec-be3c-feb5880b2be3"/&gt;
+    &lt;/ExcludedGroups&gt;
+    ...
+  &lt;/GroupSync&gt;
+  &lt;UserSync ... excludeDisabledAccounts="false"&gt;
+    &lt;ExcludedUsers&gt;
+      &lt;User name="User1" dn="CN=User1,CN=Users,DC=corp,DC=example,DC=com" guid="4c1f064a-865e-4359-b9b6-6580b3dfc80f"/&gt;
+      &lt;User name="User2" dn="CN=User2,CN=Users,DC=corp,DC=example,DC=com" guid="34be56af-c639-4ac7-96f5-11ce0690ebfb"/&gt;
+      ...
+    &lt;/ExcludedUsers&gt;
+  &lt;/UserSync&gt;
+  ...
+&lt;/IdentitySyncProfile&gt;
+</code></pre>
+<p>Group exclusions are specified using <code>&lt;Group&gt;</code> tags inside an <code>&lt;ExcludedGroups&gt;</code> tag in the main
+<code>&lt;GroupSync&gt;</code> tag. Similarly user exclusions are specified as <code>&lt;User&gt;</code> tags inside the
+<code>&lt;ExcludedUser&gt;</code> tag in the main <code>&lt;UserSync&gt;</code> tag. The users and groups are identified primarily
+via the <em>guid</em> attribute value. If a guid is not specified, or an identity with that guid cannot be
+located, the <em>dn</em> attribute value, if specified, is used to locate the source identity instead.
+If a source identity cannot be found by guid or dn a warning is logged and the exclusion
+ignored.
+The <em>name</em> attr is not used for locating identities. It is primarily used to make it easier for
+people to locate the correct tag when editing an IDSP.</p>
+<p>After an excluded identity has been found, any differences between the directory and IDSP with
+respect to guid, dn and name attributes is logged. Any differences in guid values are logged as
+warnings (because it is unexpected and may well be a copy/paste error).</p>
+<p>By default, any Active Directory users whose accounts have been marked as disabled in AD are
+still extracted (given they still exist in AD). If you want to automatically exclude those users
+you can add <code>excludeDisabledAccounts="false"</code> to the <code>&lt;UserSync&gt;</code> tag. Those disabled user accounts
+will no longer be loaded into the canonical tables and, if previously linked with SAS identities,
+will get deleted or tag-deleted. Support for the <em>excludeDisabledAccounts</em> attribute was added
+in Metacoda Plug-ins version 6.0 R4. It can also be specified in the Identity Sync Profile Wizard.   </p>
+<h2 id="exceptions">Exceptions</h2>
+<p>As described above, exceptions provide a way to ignore specified identity metadata during the
+source (AD) and target (SAS metadata) identity comparison step. This is a standard feature of
+the SAS %MDUCMP macro which has a parameter to accept a table of exceptions.</p>
+<p>You can also use this exceptions feature in the Metacoda Identity Sync Plug-in. When used inside
+SAS Management Console, the Identity Sync Plug-in allows you to interactively select identity
+metadata in the changes preview and add corresponding rows to an exceptions table. You can also
+view the contents of the exceptions table and remove any unwanted rows. The exceptions table is
+initially populated with rows to ignore many well-known pre-defined SAS users, groups, and roles
+(in case you happen to have external identities with the same names). Any changes you make to the
+exceptions table in the Metacoda Identity Sync Plug-in are stored inside the IDSP. </p>
+<p>The Metacoda Identity Sync Plug-in does not yet provide the ability to edit sync exceptions
+(other than to add or delete them). If you want to edit an existing exception, such as to change
+the filter condition or add a wildcard filter, it needs to be done by editing the IDSP XML in a
+text editor.</p>
+<p>The fragment below shows how exceptions are stored in an IDSP: </p>
+<pre><code>&lt;IdentitySyncProfile ...&gt;
+  ...
+  &lt;SyncExceptions&gt;
+    &lt;SyncException tableName="IdGrps" filter="upcase(keyid) = &amp;quot;a2c48426-1538-4a41-a4c6-635eb191f15d&amp;quot;"/&gt;
+    &lt;SyncException tableName="IdGrps" filter="upcase(name) = &amp;quot;TEST_GROUP&amp;quot;"/&gt;
+    &lt;SyncException tableName="Person" filter="upcase(name) = &amp;quot;TEST&amp;quot;"/&gt;
+    &lt;SyncException tableName="Person" filter="upcase(name) like &amp;quot;SAS%&amp;quot;"/&gt;
+    ...
+  &lt;/SyncExceptions&gt;
+&lt;/IdentitySyncProfile&gt;
+</code></pre>
+<p>Each <code>&lt;SyncException&gt;</code> tag is used to populate a row in the IDS_SRC.IDS_EXCEPTION table, as
+provided to the %MDUCMP macro, with the tableName and filter attribute values inserted into
+table columns with the same names.
+Notice that the SAS WHERE expressions in the filter attributes need to be appropriately XML encoded.</p>
+<p>The fragment above has four exceptions to:</p>
+<ul>
+<li>ignore a group by keyId value (an AD objectGUID in this case)</li>
+<li>ignore a group by name (TEST_GROUP)</li>
+<li>ignore a user by name (TEST)</li>
+<li>ignore a set of users using a wildcard (names that start with SAS)</li>
+</ul>
+<p>For more information on the exceptions table see the <em>Details</em> section in the
+<a href="https://support.sas.com/documentation/cdl/en/bisecag/69827/HTML/default/viewer.htm#p0fmb77lv8a6k5n1ciomw5jik6ft.htm">%MDUCMP</a>
+page of the <em>User Import Macros</em> appendix in the <em>SAS® 9.4 Intelligence Platform: Security
+Administration Guide</em>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../../sasautos/" class="btn btn-neutral float-right" title="Overview">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../canonical-tables/" class="btn btn-neutral" title="Using Canonical Tables"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+      <p>Copyright &copy; 2017 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.</p>
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../canonical-tables/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../../sasautos/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
