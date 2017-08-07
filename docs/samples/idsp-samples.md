@@ -23,3 +23,15 @@ Identity Sync Plug-in. Also shows how to capture any additional AD object attrib
 that custom post-processing e.g. sAMAccountName, distinguishedName and objectGUID.
 
 See <https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-capture-data-other-attrs.idsp>
+
+## idsync-ad-hybrid.idsp
+
+An example of a hybrid IDSP and it's corresponding child IDSPs (d1 and d2) for synchronising
+identities in a SAS metadata server with multiple sources, in this case 2x Microsoft Active
+Directory domain forests.
+
+See:
+
+* <https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid.idsp>
+* <https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid-d1.idsp>
+* <https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid-d2.idsp>

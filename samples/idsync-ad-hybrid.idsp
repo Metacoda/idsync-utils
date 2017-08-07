@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+*******************************************************************************
+
+Sample: idsync-ad-hybrid.idsp
+
+Purpose:
+
+An example/template for a hybrid Metacoda Identity Sync Profile (IDSP) that
+combines and synchronises identities from two child IDSPs (d1 and d2) with
+the current SAS Metadata Server connection (either within SAS Management
+Console, when using the Metacoda Identity Sync Plug-in, or a
+MetadataConnection, when used with the Metacoda Plug-ins Batch Interface).
+
+Authors:
+   Paul Homes <paul.homes@metacoda.com>
+
+*******************************************************************************
+
+Copyright 2017 Metacoda Pty Ltd
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+*******************************************************************************
+-->
+<IdentitySyncProfile xmlns="http://metacoda.com/xsd/plugins-idsync-profile-6"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://metacoda.com/xsd/plugins-idsync-profile-6 http://metacoda.com/xsd/plugins-idsync-profile-6.xsd">
+  <IdentitySource type="hybrid"/>
+  <!-- NOTE: Relative child IDSP paths like these are relative to the parent hybrid IDSP -->
+  <IncludeIdentitySyncProfile path="idsync-ad-hybrid-d1.idsp"/>
+  <IncludeIdentitySyncProfile path="idsync-ad-hybrid-d2.idsp"/>
+  <Options
+    extIdTag="Active Directory Import"
+    tagDeletedIdentities="true"
+    deletedIdentityTag="DELETE"
+    metadataBackupEnabled="false"
+    auditReportEnabled="false"
+    auditReportTimestamped="true"
+    applyChanges="true"
+    debug="false"
+    />
+</IdentitySyncProfile>
