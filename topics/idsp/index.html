@@ -367,8 +367,9 @@ general structure:   </p>
 complete example. </p>
 <h2 id="multiple-hybrid-identity-sync-profiles">Multiple (Hybrid) Identity Sync Profiles</h2>
 <p>In more complex environments there might be a need to synchronise SAS identities from multiple
-independant sources. Hybrid Identity Sync Profiles are available in situations where is not
-possible to obtain all required SAS identities using a single Identity Sync Profile.</p>
+independant sources. Hybrid Identity Sync Profiles, available since Metacoda Plug-ins 6.01 R1, can
+be used in situations where is not possible to obtain all required SAS identities using a single
+Identity Sync Profile.</p>
 <p>If you were to try to simply use multiple IDSPs in sequence, the identities that were added by the
 first IDSP would be deleted by the processing of the second IDSP. This is why we need a hybrid IDSP
 that collects all of the identities from multiple sources before it attempts to synchronise them
@@ -439,6 +440,10 @@ where a Hybrid IDSP includes 2 child IDSPs, <em>d1</em> and <em>d2</em>:</p>
   Hybrid IDSP are ignored.</li>
 <li>All code hooks in the Hybrid IDSP are processed.</li>
 </ul>
+<p>See <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid.idsp">https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid.idsp</a>,
+<a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid-d1.idsp">https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid-d1.idsp</a>, and
+<a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid-d2.idsp">https://github.com/Metacoda/idsync-utils/blob/master/samples/idsync-ad-hybrid-d2.idsp</a>
+for a complete hybrid IDSP example.</p>
               
             </div>
           </div>
