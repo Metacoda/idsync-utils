@@ -15,4 +15,5 @@ The following SAS macros are provided in this repository.
 
 * [%metacodaExtIdExtract](metacodaExtIdExtract.md): Extract ExternalIdentity objects from SAS metadata. 
 * [%metacodaExtIdUpdate](metacodaExtIdUpdate.md): Update ExternalIdentity objects in SAS metadata.
+* [%metacodaPersonExtract](metacodaPersonExtract.md): Extract Person (user) objects from SAS metadata. 
 * [%metacodaXMLEncode](metacodaXMLEncode.md): Encode text for use in XML files or streams.
