@@ -17,6 +17,12 @@ groups.
 
 See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaExtIdUpdateSample.sas>
  
+## metacodaIdentityGroupExtractSample.sas
+
+Extracts basic attributes for IdentityGroup (group and role) objects in SAS metadata..
+
+See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaIdentityGroupExtractSample.sas>
+
 ## metacodaPersonExtractSample.sas
 
 Extracts basic attributes for Person (user) objects in SAS metadata..

@@ -17,6 +17,7 @@ pages:
       - Overview: 'sasautos/index.md'
       - '%metacodaExtIdExtract': 'sasautos/metacodaExtIdExtract.md'
       - '%metacodaExtIdUpdate': 'sasautos/metacodaExtIdUpdate.md'
+      - '%metacodaIdentityGroupExtract': 'sasautos/metacodaIdentityGroupExtract.md'
       - '%metacodaPersonExtract': 'sasautos/metacodaPersonExtract.md'
       - '%metacodaXMLEncode': 'sasautos/metacodaXMLEncode.md'
   - Samples:
