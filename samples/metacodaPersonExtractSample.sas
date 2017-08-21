@@ -47,8 +47,14 @@ options ls=max ps=max;
 
 * -----------------------------------------------------------------------------;
 
-* Sample 1: extract basic attributes for all Person objects.
-  Additionally generate debug info and capture the XML files in /tmp
+* Sample 1: extract basic attributes for all Person objects;
+
+%metacodaPersonExtract(table=work.persons);
+
+* -----------------------------------------------------------------------------;
+
+* Sample 2: extract basic attributes for all Person objects as above
+  but also generate debug info and capture the XML files in /tmp
   ;
 
 %metacodaPersonExtract(
