@@ -302,12 +302,12 @@ objects that are associated with Identity (user and/or group) objects.</p>
    append=0,
    xmlDir=,
    debug=0
-   )
+   );
 </code></pre>
 <p>This macro accepts several mandatory and optional named parameters and generates a SAS table
 as output.</p>
 <p><strong><em>table</em></strong>: <em>(MANDATORY)</em></p>
-<p>The output table name (1 or 2 level) that will be overwritten.</p>
+<p>The output table name (1 or 2 level) that will be overwritten (or appended to).</p>
 <p><strong><em>identityType</em></strong>: <em>(OPTIONAL)</em></p>
 <p>The SAS metadata model type for the type of identity whose Logins will be extracted.
 The value must be either blank, Person, or IdentityGroup.
@@ -325,7 +325,7 @@ If unspecified the work directory path will be used by default.</p>
 <p>A flag (0/1) indicating whether to generate additional debug info for troubleshooting purposes.
 The default is zero for no debug.</p>
 <h2 id="examples">Examples</h2>
-<p>Extract Logins for all users and groups:</p>
+<p>Extract login metadata for all users and groups:</p>
 <pre><code>%metacodaIdentityLoginExtract(table=work.identityLogins)
 </code></pre>
 <p>For more examples see <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaIdentityLoginExtractSample.sas">metacodaIdentityLoginExtractSample.sas</a>.</p>

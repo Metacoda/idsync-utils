@@ -349,14 +349,14 @@ The default is zero for no debug.</p>
     table=work.userExtIdUpdate,
     extIdObjIdColName=extIdObjId,
     extIdNewIdentifierColName=extIdNewIdentifier
-    );
+    )
 </code></pre>
 <p>Update ExternalIdentity Identifier (keyId) values for AD-synced groups:</p>
 <pre><code>%metacodaExtIdUpdate(
     table=groupExtIdUpdate,
     extIdObjIdColName=extIdObjId,
     extIdNewIdentifierColName=extIdNewIdentifier
-    );
+    )
 </code></pre>
 <p>See the sample <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaExtIdUpdateSample.sas">metacodaExtIdUpdateSample.sas</a> for a more
 in-depth example of how a keyId migration can be done with the help of the Metacoda Identity Sync
