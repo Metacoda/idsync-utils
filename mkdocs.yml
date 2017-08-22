@@ -20,6 +20,7 @@ pages:
       - '%metacodaIdentityGroupExtract': 'sasautos/metacodaIdentityGroupExtract.md'
       - '%metacodaPersonExtract': 'sasautos/metacodaPersonExtract.md'
       - '%metacodaPersonLocationExtract': 'sasautos/metacodaPersonLocationExtract.md'
+      - '%metacodaPersonPhoneExtract': 'sasautos/metacodaPersonPhoneExtract.md'
       - '%metacodaXMLEncode': 'sasautos/metacodaXMLEncode.md'
   - Samples:
     - Sample Identity Sync Profiles: 'samples/idsp-samples.md'

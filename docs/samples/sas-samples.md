@@ -35,6 +35,12 @@ Extracts SAS metadata for Location (physical address) objects associated with Pe
 
 See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonLocationExtractSample.sas>
 
+## metacodaPersonPhoneExtractSample.sas
+
+Extracts SAS metadata for Phone (number) objects associated with Person (user) objects.
+
+See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonPhoneExtractSample.sas>
+
 ## metacodaXMLEncodeSample.sas
 
 A simple example of encoding text strings for use XML files/streams (such as SAS PROC METADATA).
