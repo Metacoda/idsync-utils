@@ -32,8 +32,8 @@ The default is zero for no debug.
 
 ## Examples
 
-Extract basic metadata attributes for all users:
+Extract email metadata for all users:
  
-    %metacodaPersonEmailExtract(table=work.personEmails);
+    %metacodaPersonEmailExtract(table=work.personEmails)
 
 For more examples see [metacodaPersonEmailExtractSample.sas](https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonEmailExtractSample.sas).

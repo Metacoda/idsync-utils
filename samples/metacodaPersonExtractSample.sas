@@ -49,7 +49,7 @@ options ls=max ps=max;
 
 * Sample 1: extract basic attributes for all Person objects;
 
-%metacodaPersonExtract(table=work.persons);
+%metacodaPersonExtract(table=work.persons)
 
 * -----------------------------------------------------------------------------;
 
@@ -61,7 +61,7 @@ options ls=max ps=max;
     table=work.persons,
     xmlDir=/tmp,
     debug=1
-    );
+    )
 
 title1 "Person objects";
 

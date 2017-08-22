@@ -49,7 +49,7 @@ options ls=max ps=max;
 
 * Sample 1: extract Email (address) information for all Person (user) objects;
 
-%metacodaPersonEmailExtract(table=work.personEmails);
+%metacodaPersonEmailExtract(table=work.personEmails)
 
 * -----------------------------------------------------------------------------;
 
@@ -61,7 +61,7 @@ options ls=max ps=max;
     table=work.personEmails,
     xmlDir=/tmp,
     debug=1
-    );
+    )
 
 title1 "Person Email objects";
 

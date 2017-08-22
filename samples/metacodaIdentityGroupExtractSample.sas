@@ -49,7 +49,7 @@ options ls=max ps=max;
 
 * Sample 1: extract basic attributes for all IdentityGroup objects;
 
-%metacodaIdentityGroupExtract(table=work.idGroups);
+%metacodaIdentityGroupExtract(table=work.idGroups)
 
 * -----------------------------------------------------------------------------;
 
@@ -61,7 +61,7 @@ options ls=max ps=max;
     table=work.idGroups,
     xmlDir=/tmp,
     debug=1
-    );
+    )
 
 title1 "IdentityGroup objects";
 

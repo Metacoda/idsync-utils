@@ -49,7 +49,7 @@ options ls=max ps=max;
 
 * Sample 1: extract Location (physical address) information for all Person (user) objects;
 
-%metacodaPersonLocationExtract(table=work.personLocations);
+%metacodaPersonLocationExtract(table=work.personLocations)
 
 * -----------------------------------------------------------------------------;
 
@@ -61,7 +61,7 @@ options ls=max ps=max;
     table=work.personLocations,
     xmlDir=/tmp,
     debug=1
-    );
+    )
 
 title1 "Person Location objects";
 

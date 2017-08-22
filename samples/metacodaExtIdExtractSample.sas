@@ -49,10 +49,14 @@ options ls=max ps=max;
 
 * Sample 1: extract basic attributes for ALL ExternalIdentity objects;
 
-%metacodaExtIdExtract(table=work.allExtIds);
+%metacodaExtIdExtract(table=work.allExtIds)
 
 title1 "ALL ExternalIdentity objects";
-proc print data=work.allExtIds;
+
+proc contents data=work.allExtIds;
+run;
+
+proc print data=work.allExtIds label width=min;
 run;
 
 * -----------------------------------------------------------------------------;
@@ -66,10 +70,14 @@ run;
     table=work.adUserExtIds,
     context=Active Directory Import,
     associatedModelType=Person
-    );
+    )
 
 title1 "ExternalIdentity objects for AD Users";
-proc print data=work.adUserExtIds;
+
+proc contents data=work.adUserExtIds;
+run;
+
+proc print data=work.adUserExtIds label width=min;
 run;
 
 * -----------------------------------------------------------------------------;
@@ -86,10 +94,14 @@ run;
     associatedModelType=IdentityGroup,
     xmlDir=/tmp,
     debug=1
-    );
+    )
 
 title1 "ExternalIdentity objects for AD Groups";
-proc print data=work.adGroupExtIds;
+
+proc contents data=work.adGroupExtIds;
+run;
+
+proc print data=work.adGroupExtIds label width=min;
 run;
 
 * -----------------------------------------------------------------------------;

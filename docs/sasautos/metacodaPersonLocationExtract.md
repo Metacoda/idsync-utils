@@ -32,8 +32,8 @@ The default is zero for no debug.
 
 ## Examples
 
-Extract basic metadata attributes for all users:
+Extract location metadata for all users:
  
-    %metacodaPersonLocationExtract(table=work.personLocations);
+    %metacodaPersonLocationExtract(table=work.personLocations)
 
 For more examples see [metacodaPersonLocationExtractSample.sas](https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonLocationExtractSample.sas).

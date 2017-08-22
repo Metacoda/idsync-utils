@@ -49,7 +49,7 @@ options ls=max ps=max;
 
 * Sample 1: extract Phone (number) information for all Person (user) objects;
 
-%metacodaPersonPhoneExtract(table=work.personPhones);
+%metacodaPersonPhoneExtract(table=work.personPhones)
 
 * -----------------------------------------------------------------------------;
 
@@ -61,7 +61,7 @@ options ls=max ps=max;
     table=work.personPhones,
     xmlDir=/tmp,
     debug=1
-    );
+    )
 
 title1 "Person Phone objects";
 

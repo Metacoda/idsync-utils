@@ -33,6 +33,6 @@ The default is zero for no debug.
 
 Extract basic metadata attributes for all users:
  
-    %metacodaPersonExtract(table=work.persons);
+    %metacodaPersonExtract(table=work.persons)
 
 For more examples see [metacodaPersonExtractSample.sas](https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonExtractSample.sas).

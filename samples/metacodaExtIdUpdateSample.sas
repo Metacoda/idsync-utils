@@ -171,13 +171,13 @@ libname ids_src 'Data/idsync/ids_src';
 %metacodaExtIdExtract(table=work.adUserExtIds,
     context=&CONTEXT,
     associatedModelType=Person
-    );
+    )
 
 *** Extract current ExternalIdentity data (keyId) for AD-sourced SAS users;
 %metacodaExtIdExtract(table=work.adGroupExtIds,
     context=&CONTEXT,
     associatedModelType=IdentityGroup
-    );
+    )
 
 *** Join the current SAS ExternalIdentity data with the AD data to build an update
     mapping of old KeyId to new keyId with ExternalIdentity object id
@@ -196,11 +196,21 @@ create table userExtIdUpdate as
 quit;
 
 *** Print the mapping tables for audit purposes;
+
 title1 "ExternalIdentity (keyID) Update Mapping for Groups";
-proc print data= work.groupExtIdUpdate;
+
+proc contents data=work.groupExtIdUpdate;
 run;
+
+proc print data=work.groupExtIdUpdate label width=min;
+run;
+
 title1 "ExternalIdentity (keyID) Update Mapping for Users";
-proc print data= userExtIdUpdate;
+
+proc contents data=work.userExtIdUpdate;
+run;
+
+proc print data=work.userExtIdUpdate label width=min;
 run;
 
 *** Finally apply the updates to SAS metadata (so we can start using the new keyId attributes in Identity Sync Profiles);
@@ -208,12 +218,12 @@ run;
     table=groupExtIdUpdate,
     extIdObjIdColName=extIdObjId,
     extIdNewIdentifierColName=extIdNewIdentifier
-    );
+    )
 %metacodaExtIdUpdate(
     table=work.userExtIdUpdate,
     extIdObjIdColName=extIdObjId,
     extIdNewIdentifierColName=extIdNewIdentifier
-    );
+    )
 
 * -----------------------------------------------------------------------------;
 

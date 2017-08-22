@@ -32,8 +32,8 @@ The default is zero for no debug.
 
 ## Examples
 
-Extract basic metadata attributes for all users:
+Extract phone metadata for all users:
  
-    %metacodaPersonPhoneExtract(table=work.personPhones);
+    %metacodaPersonPhoneExtract(table=work.personPhones)
 
 For more examples see [metacodaPersonPhoneExtractSample.sas](https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonPhoneExtractSample.sas).

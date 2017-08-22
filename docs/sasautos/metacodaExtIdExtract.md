@@ -53,7 +53,7 @@ Extract external identity metadata for all AD-synced users:
         table=work.adUserExtIds,
         context=Active Directory Import,
         associatedModelType=Person
-        );
+        )
 
 Extract external identity metadata for all AD-synced groups:
  
@@ -61,6 +61,6 @@ Extract external identity metadata for all AD-synced groups:
         table=work.adGroupExtIds,
         context=Active Directory Import,
         associatedModelType=IdentityGroup
-        );
+        )
 
 For more examples see [metacodaExtIdExtractSample.sas](https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaExtIdExtractSample.sas).

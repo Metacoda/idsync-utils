@@ -13,14 +13,14 @@ objects that are associated with Identity (user and/or group) objects.
        append=0,
        xmlDir=,
        debug=0
-       )
+       );
 
 This macro accepts several mandatory and optional named parameters and generates a SAS table
 as output.
 
 ***table***: _(MANDATORY)_
 
-The output table name (1 or 2 level) that will be overwritten.
+The output table name (1 or 2 level) that will be overwritten (or appended to).
 
 ***identityType***: _(OPTIONAL)_
 
@@ -48,7 +48,7 @@ The default is zero for no debug.
 
 ## Examples
 
-Extract Logins for all users and groups:
+Extract login metadata for all users and groups:
  
     %metacodaIdentityLoginExtract(table=work.identityLogins)
 

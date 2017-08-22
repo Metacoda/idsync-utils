@@ -79,7 +79,7 @@ Update ExternalIdentity Identifier (keyId) values for AD-synced users:
         table=work.userExtIdUpdate,
         extIdObjIdColName=extIdObjId,
         extIdNewIdentifierColName=extIdNewIdentifier
-        );
+        )
 
 Update ExternalIdentity Identifier (keyId) values for AD-synced groups:
 
@@ -87,7 +87,7 @@ Update ExternalIdentity Identifier (keyId) values for AD-synced groups:
         table=groupExtIdUpdate,
         extIdObjIdColName=extIdObjId,
         extIdNewIdentifierColName=extIdNewIdentifier
-        );
+        )
 
 See the sample [metacodaExtIdUpdateSample.sas](https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaExtIdUpdateSample.sas) for a more
 in-depth example of how a keyId migration can be done with the help of the Metacoda Identity Sync

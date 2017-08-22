@@ -34,6 +34,6 @@ The default is zero for no debug.
 
 Extract basic metadata attributes for all groups and roles:
  
-    %metacodaIdentityGroupExtract(table=work.idGroups);
+    %metacodaIdentityGroupExtract(table=work.idGroups)
 
 For more examples see [metacodaIdentityGroupExtractSample.sas](https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaIdentityGroupExtractSample.sas).
