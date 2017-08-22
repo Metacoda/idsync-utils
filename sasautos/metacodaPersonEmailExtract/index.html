@@ -8,7 +8,7 @@
   
   <meta name="author" content="Metacoda Pty Ltd">
   
-  <title>License - Metacoda Identity Sync Utilities</title>
+  <title>%metacodaPersonEmailExtract - Metacoda Identity Sync Utilities</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "License";
-    var mkdocs_page_input_path = "about/license.md";
-    var mkdocs_page_url = "/about/license/";
+    var mkdocs_page_name = "%metacodaPersonEmailExtract";
+    var mkdocs_page_input_path = "sasautos/metacodaPersonEmailExtract.md";
+    var mkdocs_page_url = "/sasautos/metacodaPersonEmailExtract/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -109,63 +109,76 @@
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/">Overview</a>
+        <a class="" href="../">Overview</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaExtIdExtract/">%metacodaExtIdExtract</a>
+        <a class="" href="../metacodaExtIdExtract/">%metacodaExtIdExtract</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaExtIdUpdate/">%metacodaExtIdUpdate</a>
+        <a class="" href="../metacodaExtIdUpdate/">%metacodaExtIdUpdate</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaIdentityGroupExtract/">%metacodaIdentityGroupExtract</a>
+        <a class="" href="../metacodaIdentityGroupExtract/">%metacodaIdentityGroupExtract</a>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 current">
+        <a class="current" href="./">%metacodaPersonEmailExtract</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#sas-macro-metacodapersonemailextract">SAS Macro: %metacodaPersonEmailExtract</a></li>
+                
+                    <li><a class="toctree-l4" href="#purpose">Purpose</a></li>
+                
+                    <li><a class="toctree-l4" href="#parameters">Parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#examples">Examples</a></li>
+                
+            
+            </ul>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaPersonEmailExtract/">%metacodaPersonEmailExtract</a>
+        <a class="" href="../metacodaPersonExtract/">%metacodaPersonExtract</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaPersonExtract/">%metacodaPersonExtract</a>
+        <a class="" href="../metacodaPersonLocationExtract/">%metacodaPersonLocationExtract</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaPersonLocationExtract/">%metacodaPersonLocationExtract</a>
+        <a class="" href="../metacodaPersonPhoneExtract/">%metacodaPersonPhoneExtract</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaPersonPhoneExtract/">%metacodaPersonPhoneExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../sasautos/metacodaXMLEncode/">%metacodaXMLEncode</a>
+        <a class="" href="../metacodaXMLEncode/">%metacodaXMLEncode</a>
         
     </li>
 
@@ -211,22 +224,15 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">License</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#license">License</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../../about/license/">License</a>
         
     </li>
 
         
             
     <li class="toctree-l1 ">
-        <a class="" href="../trademarks/">Trademarks</a>
+        <a class="" href="../../about/trademarks/">Trademarks</a>
         
     </li>
 
@@ -256,11 +262,15 @@
     
       
         
-          <li>About &raquo;</li>
+          <li>Reference &raquo;</li>
+        
+      
+        
+          <li>SAS Macros &raquo;</li>
         
       
     
-    <li>License</li>
+    <li>%metacodaPersonEmailExtract</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -274,16 +284,32 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="license">License</h1>
-<p>The utilities contained in this repository are licensed under the terms of the
-<a href="https://opensource.org/licenses/Apache-2.0">Apache License 2.0</a>.
-See <a href="https://github.com/Metacoda/idsync-utils/blob/master/LICENSE.txt">LICENSE.txt</a> for more information.</p>
-<p>The Metacoda Identity Sync Plug-in which these utilities are intended to support is a commercial
-product from Metacoda Pty Ltd, and must be separately licensed from Metacoda if you want to use
-these utilities with it.</p>
-<p>If you do not license the Metacoda Identity Sync Plug-in from Metacoda then some of these utilities
-may still be of use to you with alternative SAS identity synchronisation processes.
-The license referenced above permits such use.</p>
+                <h1 id="sas-macro-metacodapersonemailextract">SAS Macro: %metacodaPersonEmailExtract</h1>
+<h2 id="purpose">Purpose</h2>
+<p>This macro is used to extract basic attribute values for SAS metadata Email (address)
+objects that are associated with Person (user) objects.</p>
+<h2 id="parameters">Parameters</h2>
+<pre><code>%macro metacodaPersonEmailExtract(
+   table=,
+   xmlDir=,
+   debug=0
+   );
+</code></pre>
+<p>This macro accepts several mandatory and optional named parameters and generates a SAS table
+as output.</p>
+<p><strong><em>table</em></strong>: <em>(MANDATORY)</em></p>
+<p>The output table name (1 or 2 level) that will be overwritten.</p>
+<p><strong><em>xmlDir</em></strong>: <em>(OPTIONAL)</em></p>
+<p>Path to a directory where PROC METADATA request, response, and map XML files will be written.
+If unspecified the work directory path will be used by default.</p>
+<p><strong><em>debug</em></strong>: <em>(OPTIONAL)</em></p>
+<p>A flag (0/1) indicating whether to generate additional debug info for troubleshooting purposes.
+The default is zero for no debug.</p>
+<h2 id="examples">Examples</h2>
+<p>Extract basic metadata attributes for all users:</p>
+<pre><code>%metacodaPersonEmailExtract(table=work.personEmails);
+</code></pre>
+<p>For more examples see <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonEmailExtractSample.sas">metacodaPersonEmailExtractSample.sas</a>.</p>
               
             </div>
           </div>
@@ -291,10 +317,10 @@ The license referenced above permits such use.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../trademarks/" class="btn btn-neutral float-right" title="Trademarks">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../metacodaPersonExtract/" class="btn btn-neutral float-right" title="%metacodaPersonExtract">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../../resources/" class="btn btn-neutral" title="Resources"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../metacodaIdentityGroupExtract/" class="btn btn-neutral" title="%metacodaIdentityGroupExtract"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -324,10 +350,10 @@ The license referenced above permits such use.</p>
           <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../../resources/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../metacodaIdentityGroupExtract/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../trademarks/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../metacodaPersonExtract/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
