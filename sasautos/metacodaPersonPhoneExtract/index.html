@@ -8,7 +8,7 @@
   
   <meta name="author" content="Metacoda Pty Ltd">
   
-  <title>%metacodaIdentityGroupExtract - Metacoda Identity Sync Utilities</title>
+  <title>%metacodaPersonPhoneExtract - Metacoda Identity Sync Utilities</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "%metacodaIdentityGroupExtract";
-    var mkdocs_page_input_path = "sasautos/metacodaIdentityGroupExtract.md";
-    var mkdocs_page_url = "/sasautos/metacodaIdentityGroupExtract/";
+    var mkdocs_page_name = "%metacodaPersonPhoneExtract";
+    var mkdocs_page_input_path = "sasautos/metacodaPersonPhoneExtract.md";
+    var mkdocs_page_url = "/sasautos/metacodaPersonPhoneExtract/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -129,21 +129,8 @@
 
         
             
-    <li class="toctree-l1 current">
-        <a class="current" href="./">%metacodaIdentityGroupExtract</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#sas-macro-metacodaidentitygroupextract">SAS Macro: %metacodaIdentityGroupExtract</a></li>
-                
-                    <li><a class="toctree-l4" href="#purpose">Purpose</a></li>
-                
-                    <li><a class="toctree-l4" href="#parameters">Parameters</a></li>
-                
-                    <li><a class="toctree-l4" href="#examples">Examples</a></li>
-                
-            
-            </ul>
+    <li class="toctree-l1 ">
+        <a class="" href="../metacodaIdentityGroupExtract/">%metacodaIdentityGroupExtract</a>
         
     </li>
 
@@ -163,8 +150,21 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaPersonPhoneExtract/">%metacodaPersonPhoneExtract</a>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">%metacodaPersonPhoneExtract</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#sas-macro-metacodapersonphoneextract">SAS Macro: %metacodaPersonPhoneExtract</a></li>
+                
+                    <li><a class="toctree-l4" href="#purpose">Purpose</a></li>
+                
+                    <li><a class="toctree-l4" href="#parameters">Parameters</a></li>
+                
+                    <li><a class="toctree-l4" href="#examples">Examples</a></li>
+                
+            
+            </ul>
         
     </li>
 
@@ -263,7 +263,7 @@
         
       
     
-    <li>%metacodaIdentityGroupExtract</li>
+    <li>%metacodaPersonPhoneExtract</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -277,12 +277,12 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sas-macro-metacodaidentitygroupextract">SAS Macro: %metacodaIdentityGroupExtract</h1>
+                <h1 id="sas-macro-metacodapersonphoneextract">SAS Macro: %metacodaPersonPhoneExtract</h1>
 <h2 id="purpose">Purpose</h2>
-<p>This macro is used to extract basic attribute values for IdentityGroup objects (groups and roles)
-from SAS metadata.</p>
+<p>This macro is used to extract basic attribute values for SAS metadata Phone (number)
+objects that are associated with Person (user) objects.</p>
 <h2 id="parameters">Parameters</h2>
-<pre><code>%macro metacodaIdentityGroupExtract(
+<pre><code>%macro metacodaPersonPhoneExtract(
    table=,
    xmlDir=,
    debug=0
@@ -299,10 +299,10 @@ If unspecified the work directory path will be used by default.</p>
 <p>A flag (0/1) indicating whether to generate additional debug info for troubleshooting purposes.
 The default is zero for no debug.</p>
 <h2 id="examples">Examples</h2>
-<p>Extract basic metadata attributes for all groups and roles:</p>
-<pre><code>%metacodaIdentityGroupExtract(table=work.idGroups);
+<p>Extract basic metadata attributes for all users:</p>
+<pre><code>%metacodaPersonPhoneExtract(table=work.personPhones);
 </code></pre>
-<p>For more examples see <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaIdentityGroupExtractSample.sas">metacodaIdentityGroupExtractSample.sas</a>.</p>
+<p>For more examples see <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonPhoneExtractSample.sas">metacodaPersonPhoneExtractSample.sas</a>.</p>
               
             </div>
           </div>
@@ -310,10 +310,10 @@ The default is zero for no debug.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../metacodaPersonExtract/" class="btn btn-neutral float-right" title="%metacodaPersonExtract">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../metacodaXMLEncode/" class="btn btn-neutral float-right" title="%metacodaXMLEncode">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../metacodaExtIdUpdate/" class="btn btn-neutral" title="%metacodaExtIdUpdate"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../metacodaPersonLocationExtract/" class="btn btn-neutral" title="%metacodaPersonLocationExtract"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -343,10 +343,10 @@ The default is zero for no debug.</p>
           <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../metacodaExtIdUpdate/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../metacodaPersonLocationExtract/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../metacodaPersonExtract/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../metacodaXMLEncode/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
