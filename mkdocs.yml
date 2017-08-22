@@ -18,6 +18,7 @@ pages:
       - '%metacodaExtIdExtract': 'sasautos/metacodaExtIdExtract.md'
       - '%metacodaExtIdUpdate': 'sasautos/metacodaExtIdUpdate.md'
       - '%metacodaIdentityGroupExtract': 'sasautos/metacodaIdentityGroupExtract.md'
+      - '%metacodaIdentityLoginExtract': 'sasautos/metacodaIdentityLoginExtract.md'
       - '%metacodaPersonEmailExtract': 'sasautos/metacodaPersonEmailExtract.md'
       - '%metacodaPersonExtract': 'sasautos/metacodaPersonExtract.md'
       - '%metacodaPersonLocationExtract': 'sasautos/metacodaPersonLocationExtract.md'
