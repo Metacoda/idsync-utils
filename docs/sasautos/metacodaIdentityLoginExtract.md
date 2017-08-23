@@ -26,7 +26,7 @@ The output table name (1 or 2 level) that will be overwritten (or appended to).
 
 The SAS metadata model type for the type of identity whose Logins will be extracted.
 The value must be either blank, Person, or IdentityGroup.
-If the value is blank when Logins for both Person (user) and IdentityGroup (group) types will be
+If the value is blank then Logins for both Person (user) and IdentityGroup (group) types will be
 extracted. The default is blank.
 
 ***append***: _(OPTIONAL)_
