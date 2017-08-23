@@ -41,6 +41,12 @@ Extracts basic attributes for Person (user) objects in SAS metadata..
 
 See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonExtractSample.sas>
 
+## metacodaPersonIntLoginExtractSample.sas
+
+Extracts SAS metadata for InternalLogin (account) objects associated with Person (user) objects.
+
+See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaPersonIntLoginExtractSample.sas>
+
 ## metacodaPersonLocationExtractSample.sas
 
 Extracts SAS metadata for Location (physical address) objects associated with Person (user) objects.

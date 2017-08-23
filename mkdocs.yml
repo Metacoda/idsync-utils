@@ -21,6 +21,7 @@ pages:
       - '%metacodaIdentityLoginExtract': 'sasautos/metacodaIdentityLoginExtract.md'
       - '%metacodaPersonEmailExtract': 'sasautos/metacodaPersonEmailExtract.md'
       - '%metacodaPersonExtract': 'sasautos/metacodaPersonExtract.md'
+      - '%metacodaPersonIntLoginExtract': 'sasautos/metacodaPersonIntLoginExtract.md'
       - '%metacodaPersonLocationExtract': 'sasautos/metacodaPersonLocationExtract.md'
       - '%metacodaPersonPhoneExtract': 'sasautos/metacodaPersonPhoneExtract.md'
       - '%metacodaXMLEncode': 'sasautos/metacodaXMLEncode.md'

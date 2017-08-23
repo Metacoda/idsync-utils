@@ -19,6 +19,7 @@ The following SAS macros are provided in this repository.
 * [%metacodaIdentityLoginExtract](metacodaIdentityLoginExtract.md): Extract Login (account) objects associated with Identity (user and/or group) objects in SAS metadata. 
 * [%metacodaPersonEmailExtract](metacodaPersonEmailExtract.md): Extract Email (address) objects associated with Person (user) objects in SAS metadata. 
 * [%metacodaPersonExtract](metacodaPersonExtract.md): Extract Person (user) objects from SAS metadata. 
+* [%metacodaPersonIntLoginExtract](metacodaPersonIntLoginExtract.md): Extract InternalLogin (account) objects associated with Person (user) objects in SAS metadata. 
 * [%metacodaPersonLocationExtract](metacodaPersonLocationExtract.md): Extract Location (physical address) objects associated with Person (user) objects in SAS metadata. 
 * [%metacodaPersonPhoneExtract](metacodaPersonPhoneExtract.md): Extract Phone (number) objects associated with Person (user) objects in SAS metadata. 
 * [%metacodaXMLEncode](metacodaXMLEncode.md): Encode text for use in XML files or streams.
