@@ -8,7 +8,7 @@
   
   <meta name="author" content="Metacoda Pty Ltd">
   
-  <title>%metacodaExtIdExtract - Metacoda Identity Sync Utilities</title>
+  <title>%metacodaAuthDomainExtract - Metacoda Identity Sync Utilities</title>
   
 
   <link rel="shortcut icon" href="../../img/favicon.ico">
@@ -23,9 +23,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "%metacodaExtIdExtract";
-    var mkdocs_page_input_path = "sasautos/metacodaExtIdExtract.md";
-    var mkdocs_page_url = "/sasautos/metacodaExtIdExtract/";
+    var mkdocs_page_name = "%metacodaAuthDomainExtract";
+    var mkdocs_page_input_path = "sasautos/metacodaAuthDomainExtract.md";
+    var mkdocs_page_url = "/sasautos/metacodaAuthDomainExtract/";
   </script>
   
   <script src="../../js/jquery-2.1.1.min.js"></script>
@@ -115,19 +115,12 @@
 
         
             
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaAuthDomainExtract/">%metacodaAuthDomainExtract</a>
-        
-    </li>
-
-        
-            
     <li class="toctree-l1 current">
-        <a class="current" href="./">%metacodaExtIdExtract</a>
+        <a class="current" href="./">%metacodaAuthDomainExtract</a>
         
             <ul>
             
-                <li class="toctree-l3"><a href="#sas-macro-metacodaextidextract">SAS Macro: %metacodaExtIdExtract</a></li>
+                <li class="toctree-l3"><a href="#sas-macro-metacodaauthdomainextract">SAS Macro: %metacodaAuthDomainExtract</a></li>
                 
                     <li><a class="toctree-l4" href="#purpose">Purpose</a></li>
                 
@@ -137,6 +130,13 @@
                 
             
             </ul>
+        
+    </li>
+
+        
+            
+    <li class="toctree-l1 ">
+        <a class="" href="../metacodaExtIdExtract/">%metacodaExtIdExtract</a>
         
     </li>
 
@@ -291,7 +291,7 @@
         
       
     
-    <li>%metacodaExtIdExtract</li>
+    <li>%metacodaAuthDomainExtract</li>
     <li class="wy-breadcrumbs-aside">
       
         
@@ -305,18 +305,13 @@
           <div role="main">
             <div class="section">
               
-                <h1 id="sas-macro-metacodaextidextract">SAS Macro: %metacodaExtIdExtract</h1>
+                <h1 id="sas-macro-metacodaauthdomainextract">SAS Macro: %metacodaAuthDomainExtract</h1>
 <h2 id="purpose">Purpose</h2>
-<p>This macro is used to extract basic attribute values for ExternalIdentity objects from SAS metadata.
-ExternalIdentity objects are created during identity synchronisation with external identity sources
-such as Microsoft Active Directory. They contain the 3rd party keys for those external users and
-groups that allow us to re-locate those external identities when a subsequent sync is done, ideally
-even when the external users and groups are renamed or moved into another part of the directory.</p>
+<p>This macro is used to extract basic attribute values for AuthenticationDomain objects from
+SAS metadata.</p>
 <h2 id="parameters">Parameters</h2>
-<pre><code>%macro metacodaExtIdExtract(
+<pre><code>%macro metacodaAuthDomainExtract(
    table=,
-   context=,
-   associatedModelType=,
    xmlDir=,
    debug=0
    );
@@ -325,12 +320,6 @@ even when the external users and groups are renamed or moved into another part o
 as output.</p>
 <p><strong><em>table</em></strong>: <em>(MANDATORY)</em></p>
 <p>The output table name (1 or 2 level) that will be overwritten.</p>
-<p><strong><em>context</em></strong>: <em>(OPTIONAL)</em></p>
-<p>If specified, will limit the output to ExternalIdentity objects with the specified Context
-attribute value. e.g. Active Directory Import</p>
-<p><strong><em>associatedModelType</em></strong>: <em>(OPTIONAL)</em></p>
-<p>If specified, will limit the output to ExternalIdentity objects that are associated with metadata
-objects of the specified model type. e.g. Person or IdentityGroup</p>
 <p><strong><em>xmlDir</em></strong>: <em>(OPTIONAL)</em></p>
 <p>Path to a directory where PROC METADATA request, response, and map XML files will be written.
 If unspecified the work directory path will be used by default.</p>
@@ -338,21 +327,10 @@ If unspecified the work directory path will be used by default.</p>
 <p>A flag (0/1) indicating whether to generate additional debug info for troubleshooting purposes.
 The default is zero for no debug.</p>
 <h2 id="examples">Examples</h2>
-<p>Extract external identity metadata for all AD-synced users:</p>
-<pre><code>%metacodaExtIdExtract(
-    table=work.adUserExtIds,
-    context=Active Directory Import,
-    associatedModelType=Person
-    )
+<p>Extract basic metadata attributes for all AuthenticationDomain objects:</p>
+<pre><code>%metacodaAuthDomainExtract(table=work.authDomains)
 </code></pre>
-<p>Extract external identity metadata for all AD-synced groups:</p>
-<pre><code>%metacodaExtIdExtract(
-    table=work.adGroupExtIds,
-    context=Active Directory Import,
-    associatedModelType=IdentityGroup
-    )
-</code></pre>
-<p>For more examples see <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaExtIdExtractSample.sas">metacodaExtIdExtractSample.sas</a>.</p>
+<p>For more examples see <a href="https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaAuthDomainExtractSample.sas">metacodaAuthDomainExtractSample.sas</a>.</p>
               
             </div>
           </div>
@@ -360,10 +338,10 @@ The default is zero for no debug.</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../metacodaExtIdUpdate/" class="btn btn-neutral float-right" title="%metacodaExtIdUpdate">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../metacodaExtIdExtract/" class="btn btn-neutral float-right" title="%metacodaExtIdExtract">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../metacodaAuthDomainExtract/" class="btn btn-neutral" title="%metacodaAuthDomainExtract"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../" class="btn btn-neutral" title="Overview"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -393,10 +371,10 @@ The default is zero for no debug.</p>
           <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
-        <span><a href="../metacodaAuthDomainExtract/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../metacodaExtIdUpdate/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../metacodaExtIdExtract/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
