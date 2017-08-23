@@ -13,6 +13,7 @@ section of the *SAS 9.4 Companion for UNIX Environments*.
 
 The following SAS macros are provided in this repository.
 
+* [%metacodaAuthDomainExtract](metacodaAuthDomainExtract.md): Extract AuthenticationDomain objects from SAS metadata. 
 * [%metacodaExtIdExtract](metacodaExtIdExtract.md): Extract ExternalIdentity objects from SAS metadata. 
 * [%metacodaExtIdUpdate](metacodaExtIdUpdate.md): Update ExternalIdentity objects in SAS metadata.
 * [%metacodaIdentityGroupExtract](metacodaIdentityGroupExtract.md): Extract IdentityGroup (group and role) objects from SAS metadata. 

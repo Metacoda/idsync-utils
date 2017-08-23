@@ -2,6 +2,12 @@
 
 These SAS programs provide examples of how the SAS macros in this repository can be used: 
 
+## metacodaAuthDomainExtract.sas
+
+Extracts basic attributes for AuthenticationDomain objects in SAS metadata..
+
+See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaAuthDomainExtract.sas>
+
 ## metacodaExtIdExtractSample.sas
 
 Extracts SAS ExternalIdentity metadata used to link SAS identities (users and groups) with their

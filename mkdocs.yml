@@ -15,6 +15,7 @@ pages:
   - Reference:
     - SAS Macros:
       - Overview: 'sasautos/index.md'
+      - '%metacodaAuthDomainExtract': 'sasautos/metacodaAuthDomainExtract.md'
       - '%metacodaExtIdExtract': 'sasautos/metacodaExtIdExtract.md'
       - '%metacodaExtIdUpdate': 'sasautos/metacodaExtIdUpdate.md'
       - '%metacodaIdentityGroupExtract': 'sasautos/metacodaIdentityGroupExtract.md'
