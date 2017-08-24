@@ -20,6 +20,7 @@ pages:
       - '%metacodaExtIdUpdate': 'sasautos/metacodaExtIdUpdate.md'
       - '%metacodaIdentityGroupExtract': 'sasautos/metacodaIdentityGroupExtract.md'
       - '%metacodaIdentityLoginExtract': 'sasautos/metacodaIdentityLoginExtract.md'
+      - '%metacodaIdGroupMembersExtract': 'sasautos/metacodaIdGroupMembersExtract.md'
       - '%metacodaPersonEmailExtract': 'sasautos/metacodaPersonEmailExtract.md'
       - '%metacodaPersonExtract': 'sasautos/metacodaPersonExtract.md'
       - '%metacodaPersonIntLoginExtract': 'sasautos/metacodaPersonIntLoginExtract.md'

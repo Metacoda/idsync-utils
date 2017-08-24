@@ -35,6 +35,12 @@ Extracts SAS metadata for Login (account) objects associated with Identity (user
 
 See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaIdentityLoginExtractSample.sas>
 
+## metacodaIdGroupMembersExtractSample.sas
+
+Extract SAS IdentityGroup (group and role) members metadata.
+
+See <https://github.com/Metacoda/idsync-utils/blob/master/samples/metacodaIdGroupMembersExtractSample.sas>
+
 ## metacodaPersonEmailExtractSample.sas
 
 Extracts SAS metadata for Email (address) objects associated with Person (user) objects.
