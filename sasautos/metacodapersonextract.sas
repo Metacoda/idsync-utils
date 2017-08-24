@@ -59,7 +59,11 @@ put '  <Reposid>$METAREPOSITORY</Reposid>';
 put '  <Type>Person</Type>';
 put '  <Objects/>';
 put '  <NS>SAS</NS>';
-put '  <Flags>67109124</Flags>'; %* OMI_NOFORMAT (67108864) + OMI_GET_METADATA(256) + OMI_TEMPLATE(4);
+%* SAS Management Console 9.4 will not let you create a Person (user) object in a custom or a
+   project repository, so we do not look for them in non-foundation repositories.
+   OMI_NOFORMAT (67108864) + OMI_GET_METADATA(256) + OMI_TEMPLATE(4)
+   ;
+put '  <Flags>67109124</Flags>';
 put '  <Options>';
 put '    <Templates>';
 put '      <Person Id="" Name="" Desc="" MetadataCreated="" MetadataUpdated="" PublicType="" DisplayName="" Title="" />';

@@ -60,7 +60,11 @@ put '  <Reposid>$METAREPOSITORY</Reposid>';
 put '  <Type>Location</Type>';
 put '  <Objects/>';
 put '  <NS>SAS</NS>';
-put '  <Flags>67109252</Flags>'; %* OMI_NOFORMAT (67108864) + OMI_GET_METADATA(256) + OMI_XMLSELECT(128) + OMI_TEMPLATE(4);
+%* SAS Management Console 9.4 will not let you create a Person (user) object in a custom or a
+   project repository, so we do not look for Location objects in non-foundation repositories.
+   OMI_NOFORMAT (67108864) + OMI_GET_METADATA(256) + OMI_XMLSELECT(128) + OMI_TEMPLATE(4)
+   ;
+put '  <Flags>67109252</Flags>';
 put '  <Options>';
 put '    <Templates>';
 put '      <Location Id="" Name="" Desc="" MetadataCreated="" MetadataUpdated="" LocationType="" Address="" Area="" City="" Country="" PostCode="">';

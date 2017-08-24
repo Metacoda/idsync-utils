@@ -60,7 +60,12 @@ put '  <Reposid>$METAREPOSITORY</Reposid>';
 put '  <Type>AuthenticationDomain</Type>';
 put '  <Objects/>';
 put '  <NS>SAS</NS>';
-put '  <Flags>67109124</Flags>'; %* OMI_NOFORMAT (67108864) + OMI_GET_METADATA(256) + OMI_TEMPLATE(4);
+%* SAS Management Console 9.4 lets you create an AuthenticationDomain object in a custom repository
+   (albeit with a warning), but will not let you create one in a project repository. We therefore
+   look for AuthenticationDomain objects in both foundation and custom repositories.
+   OMI_NOFORMAT (67108864) + OMI_DEPENDENCY_USES (8192) + OMI_GET_METADATA(256) + OMI_TEMPLATE(4)
+   ;
+put '  <Flags>67117316</Flags>';
 put '  <Options>';
 put '    <Templates>';
 put '      <AuthenticationDomain Id="" Name="" Desc="" MetadataCreated="" MetadataUpdated="" PublicType=""';

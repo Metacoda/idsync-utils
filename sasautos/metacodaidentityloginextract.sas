@@ -74,7 +74,14 @@ put '  <Reposid>$METAREPOSITORY</Reposid>';
 put '  <Type>Login</Type>';
 put '  <Objects/>';
 put '  <NS>SAS</NS>';
-put '  <Flags>67109252</Flags>'; %* OMI_NOFORMAT (67108864) + OMI_GET_METADATA(256) + OMI_XMLSELECT(128) + OMI_TEMPLATE(4);
+%* SAS Management Console 9.4 lets you create an IdentityGroup (group/role) object in a custom
+   repository, but will not let you create one in a project repository. It will not let you create
+   a Person (user) object in a custom or a project repository. We therefore look for
+   Logins objects in both foundation and custom repositories.
+   OMI_NOFORMAT (67108864) + OMI_DEPENDENCY_USES (8192) + OMI_GET_METADATA(256) + OMI_XMLSELECT(128)
+   + OMI_TEMPLATE(4)
+   ;
+put '  <Flags>67117444</Flags>';
 put '  <Options>';
 put '    <Templates>';
 %* Login changed parent to PrimaryType in SAS 9.3 and so gained PublicType attribute - ignored for now; 
