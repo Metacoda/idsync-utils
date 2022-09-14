@@ -3,7 +3,7 @@
 ## Purpose
 
 This macro is used for consistent encoding of text so that it can be used in an XML file or stream,
-such as those used with SAS PROC METACODA.
+such as those used with SAS PROC METADATA.
 
 ## Parameters
 
