@@ -2,10 +2,10 @@ site_name: Metacoda Identity Sync Utilities
 site_url: https://metacoda.github.io/idsync-utils/
 site_description: Utilities, samples, and documentation for the Metacoda Identity Sync Plug-in. 
 site_author: Metacoda Pty Ltd
-copyright: Copyright &copy; 2017 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.
+copyright: Copyright &copy; 2017-2022 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.
 repo_url: https://github.com/metacoda/idsync-utils/
 theme: readthedocs
-pages:
+nav:
   - Intro: index.md
   - Topics:
     - Identity Sync Profiles & Process: 'topics/idsp.md'
