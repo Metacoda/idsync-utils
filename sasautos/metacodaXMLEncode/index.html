@@ -7,32 +7,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <meta name="author" content="Metacoda Pty Ltd">
-  
-  <title>%metacodaXMLEncode - Metacoda Identity Sync Utilities</title>
-  
-
+  <link rel="canonical" href="https://metacoda.github.io/idsync-utils/sasautos/metacodaXMLEncode/">
   <link rel="shortcut icon" href="../../img/favicon.ico">
-
-  
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
-
-  <link rel="stylesheet" href="../../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../../css/highlight.css">
-
+  <title>%metacodaXMLEncode - Metacoda Identity Sync Utilities</title>
+  <link rel="stylesheet" href="../../css/theme.css" />
+  <link rel="stylesheet" href="../../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "%metacodaXMLEncode";
     var mkdocs_page_input_path = "sasautos/metacodaXMLEncode.md";
-    var mkdocs_page_url = "/sasautos/metacodaXMLEncode/";
+    var mkdocs_page_url = "/idsync-utils/sasautos/metacodaXMLEncode/";
   </script>
   
-  <script src="../../js/jquery-2.1.1.min.js"></script>
-  <script src="../../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../../js/highlight.pack.js"></script>
-  <script src="../../js/theme.js"></script> 
-
+  <script src="../../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -42,235 +34,93 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
         <a href="../.." class="icon icon-home"> Metacoda Identity Sync Utilities</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-        <ul class="current">
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../..">Intro</a>
-        
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../..">Intro</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Topics</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../topics/idsp/">Identity Sync Profiles & Process</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../topics/ad-domains/">Active Directory Domains</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../topics/canonical-tables/">Using Canonical Tables</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../topics/exclusions/">Exclusions & Exceptions</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Reference</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="#">SAS Macros</a>
+    <ul class="current">
+                <li class="toctree-l2"><a class="reference internal" href="../">Overview</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaAuthDomainExtract/">%metacodaAuthDomainExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaExtIdExtract/">%metacodaExtIdExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaExtIdUpdate/">%metacodaExtIdUpdate</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaIdentityGroupExtract/">%metacodaIdentityGroupExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaIdentityLoginExtract/">%metacodaIdentityLoginExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaIdGroupMembersExtract/">%metacodaIdGroupMembersExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaPersonEmailExtract/">%metacodaPersonEmailExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaPersonExtract/">%metacodaPersonExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaPersonIntLoginExtract/">%metacodaPersonIntLoginExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaPersonLocationExtract/">%metacodaPersonLocationExtract</a>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../metacodaPersonPhoneExtract/">%metacodaPersonPhoneExtract</a>
+                </li>
+                <li class="toctree-l2 current"><a class="reference internal current" href="./">%metacodaXMLEncode</a>
+    <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#purpose">Purpose</a>
     </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Topics</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../topics/idsp/">Identity Sync Profiles & Process</a>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#parameters">Parameters</a>
     </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../topics/ad-domains/">Active Directory Domains</a>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#examples">Examples</a>
     </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../topics/canonical-tables/">Using Canonical Tables</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../topics/exclusions/">Exclusions & Exceptions</a>
-        
-    </li>
-
-        
     </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Reference</span></li>
-
-        
-            
-    <ul class="subnav">
-    <li><span>SAS Macros</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../">Overview</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaAuthDomainExtract/">%metacodaAuthDomainExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaExtIdExtract/">%metacodaExtIdExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaExtIdUpdate/">%metacodaExtIdUpdate</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaIdentityGroupExtract/">%metacodaIdentityGroupExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaIdentityLoginExtract/">%metacodaIdentityLoginExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaIdGroupMembersExtract/">%metacodaIdGroupMembersExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaPersonEmailExtract/">%metacodaPersonEmailExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaPersonExtract/">%metacodaPersonExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaPersonIntLoginExtract/">%metacodaPersonIntLoginExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaPersonLocationExtract/">%metacodaPersonLocationExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../metacodaPersonPhoneExtract/">%metacodaPersonPhoneExtract</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 current">
-        <a class="current" href="./">%metacodaXMLEncode</a>
-        
-            <ul>
-            
-                <li class="toctree-l3"><a href="#sas-macro-metacodaxmlencode">SAS Macro: %metacodaXMLEncode</a></li>
-                
-                    <li><a class="toctree-l4" href="#purpose">Purpose</a></li>
-                
-                    <li><a class="toctree-l4" href="#parameters">Parameters</a></li>
-                
-                    <li><a class="toctree-l4" href="#examples">Examples</a></li>
-                
-            
-            </ul>
-        
-    </li>
-
-        
+                </li>
     </ul>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>Samples</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../samples/idsp-samples/">Sample Identity Sync Profiles</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../samples/sas-samples/">Sample SAS Programs</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-            <li>
-    <li class="toctree-l1 ">
-        <a class="" href="../../resources/">Resources</a>
-        
-    </li>
-<li>
-          
-            <li>
-    <ul class="subnav">
-    <li><span>About</span></li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../about/license/">License</a>
-        
-    </li>
-
-        
-            
-    <li class="toctree-l1 ">
-        <a class="" href="../../about/trademarks/">Trademarks</a>
-        
-    </li>
-
-        
-    </ul>
-<li>
-          
-        </ul>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Samples</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../samples/idsp-samples/">Sample Identity Sync Profiles</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../samples/sas-samples/">Sample SAS Programs</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../resources/">Resources</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">About</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/license/">License</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../../about/trademarks/">Trademarks</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -290,23 +140,23 @@
     
       
         
-          <li>Reference &raquo;</li>
+          <li>SAS Macros &raquo;</li>
         
       
         
-          <li>SAS Macros &raquo;</li>
+          <li>Reference &raquo;</li>
         
       
     
     <li>%metacodaXMLEncode</li>
     <li class="wy-breadcrumbs-aside">
       
-        
-          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github"> Edit on GitHub</a>
-        
+        <a href="https://github.com/metacoda/idsync-utils/edit/master/docs/sasautos/metacodaXMLEncode.md"
+          class="icon icon-github"> Edit on GitHub</a>
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -315,7 +165,7 @@
                 <h1 id="sas-macro-metacodaxmlencode">SAS Macro: %metacodaXMLEncode</h1>
 <h2 id="purpose">Purpose</h2>
 <p>This macro is used for consistent encoding of text so that it can be used in an XML file or stream,
-such as those used with SAS PROC METACODA.</p>
+such as those used with SAS PROC METADATA.</p>
 <h2 id="parameters">Parameters</h2>
 <pre><code>%macro metacodaXMLEncode(text);
 </code></pre>
@@ -348,13 +198,13 @@ The result is the generation of an htmlencode function call to encode the suppli
   <div role="contentinfo">
     <!-- Copyright etc -->
     
-      <p>Copyright &copy; 2017 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.</p>
+      <p>Copyright &copy; 2017-2022 <a href="https://www.metacoda.com/">Metacoda Pty Ltd</a>.</p>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
@@ -362,10 +212,10 @@ The result is the generation of an htmlencode function call to encode the suppli
 
   </div>
 
-<div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
-          <a href="https://github.com/metacoda/idsync-utils/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+          <a href="https://github.com/metacoda/idsync-utils/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
       
       
         <span><a href="../metacodaPersonPhoneExtract/" style="color: #fcfcfc;">&laquo; Previous</a></span>
@@ -375,6 +225,14 @@ The result is the generation of an htmlencode function call to encode the suppli
       
     </span>
 </div>
+    <script>var base_url = '../..';</script>
+    <script src="../../js/theme.js" defer></script>
+      <script src="../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

@@ -1,90 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//topics/idsp/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//topics/ad-domains/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//topics/canonical-tables/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//topics/exclusions/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-        
-    <url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://metacoda.github.io/idsync-utils/</loc>
-     <lastmod></lastmod>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/topics/idsp/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/topics/ad-domains/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/topics/canonical-tables/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/topics/exclusions/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaAuthDomainExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaExtIdExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaExtIdUpdate/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaIdentityGroupExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaIdentityLoginExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaIdGroupMembersExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaPersonEmailExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaPersonExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaPersonIntLoginExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaPersonLocationExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaPersonPhoneExtract/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/sasautos/metacodaXMLEncode/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/samples/idsp-samples/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/samples/sas-samples/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/resources/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/about/license/</loc>
+     <lastmod>2022-09-14</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://metacoda.github.io/idsync-utils/about/trademarks/</loc>
+     <lastmod>2022-09-14</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//samples/idsp-samples/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//samples/sas-samples/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
-    
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//resources/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//about/license/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    <url>
-     <loc>https://metacoda.github.io/idsync-utils//about/trademarks/</loc>
-     <lastmod>2017-08-24</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-        
-    
-
 </urlset>
